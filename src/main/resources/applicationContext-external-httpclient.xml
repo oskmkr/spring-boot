@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="naverMainCommonsHttpClientTemplate" class="com.oskm.support.remote.httpclient.CommonsHttpClientTemplate">
+        <constructor-arg index="0" value="http://www.naver.com"/>
+        <constructor-arg index="1" value="GET"/>
+        <property name="connectionTimeout" value="1000"/>
+        <property name="readTimeout" value="2000"/>
+        <property name="httpResponseParser" ref="toStringResponseParser"/>
+    </bean>
+
+    <bean id="naverHttpComponentClientTemplate" class="com.oskm.support.remote.httpclient4.HttpComponentClientTemplate">
+        <constructor-arg index="0" value="http://m.cafe.naver.com?cdebug=true"/>
+        <constructor-arg index="1" value="GET"/>
+        <property name="proxyHost" value="168.219.61.252"/>
+        <property name="proxyPort" value="8080"/>
+        <property name="connectionTimeout" value="1000"/>
+        <property name="readTimeout" value="2000"/>
+        <property name="httpResponseParser" ref="toStringResponseParser"/>
+    </bean>
+
+    <bean id="noProxyManager" class="com.oskm.support.remote.httpclient4.ProxyManager">
+    </bean>
+
+    <bean id="proxyManager" class="com.oskm.support.remote.httpclient4.ProxyManager">
+        <property name="proxyHost" value="168.219.61.252"/>
+        <property name="proxyPort" value="8080"/>
+    </bean>
+
+    <bean id="paypalBasicAuthManager" class="com.oskm.support.remote.httpclient4.BasicAuthManager">
+        <property name="username" value="EOJ2S-Z6OoN_le_KS1d75wsZ6y0SFdVsY9183IvxFyZp"/>
+        <property name="password" value="EClusMEUk8e9ihI7ZdVLF5cZ6y0SFdVsY9183IvxFyZp"/>
+    </bean>
+
+    <bean id="toStringResponseParser" class="com.oskm.support.remote.httpclient.parser.ToStringResponseParser"/>
+    <bean id="toByteArrayResponseParser" class="com.oskm.support.remote.httpclient.parser.ToByteArrayResponseParser"/>
+    <bean id="toJDomDocumentResponseParser"
+          class="com.oskm.support.remote.httpclient.parser.ToJDomDocumentResponseParser"/>
+    <bean id="toJSONObjectResponseParser" class="com.oskm.support.remote.httpclient.parser.ToJSONObjectResponseParser"/>
+    <bean id="toJsonNodeResponseParser" class="com.oskm.support.remote.httpclient4.parser.ToJsonNodeResponseParser"/>
+</beans>
+

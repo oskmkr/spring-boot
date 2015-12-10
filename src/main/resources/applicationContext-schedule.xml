@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="periodCaller" class="com.oskm.schedule.PeriodCaller">
+    </bean>
+
+    <!-- ==================================================== -->
+    <!-- Scheduler Setting                                    -->
+    <!-- ==================================================== -->
+    <bean id="sampleSchedule" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="periodCaller"/>
+        <property name="targetMethod" value="output"/>
+    </bean>
+
+    <!-- =================  -->
+    <!--  cronExpression   -->
+    <!-- ================= -->
+    <!--  * * * * * * 초 분 시 일 월 주(년)  -->
+    <!--  / used : 0/5 in the seconds field means "the seconds 0, 15,30 and 45" -->
+    <!--           5/15 in the seconds filed means "the seconds 5, 20, 35, 50 "-->
+    <!-- http://dakccom.tistory.com/entry/Support-for-specifying-both-a-day-of-week-AND-a-day-of-month-parameter-is-not-implemented -->
+    <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="sampleSchedule"/>
+        <property name="cronExpression">
+            <value>0/30 * * * * ?</value>
+        </property>
+    </bean>
+
+    <bean id="schedulerFactory" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="jobDetails">
+            <list>
+                <ref bean="sampleSchedule"/>
+            </list>
+        </property>
+        <property name="triggers">
+            <list>
+                <ref bean="cronTrigger"/>
+            </list>
+        </property>
+    </bean>
+</beans>

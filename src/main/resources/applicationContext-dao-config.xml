@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+	   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <!-- Transaction manager for a single JDBC DataSource -->
+
+    <bean id="testTxManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="awareDataSourceProxy"/>
+    </bean>
+
+    <bean id="awareDataSourceProxy"
+          class="org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy">
+        <property name="targetDataSource" ref="dataSourceTest"/>
+    </bean>
+
+    <!-- SqlMap setup for MyBATIS Database Layer -->
+
+    <!-- Cafechat Location db(read) -->
+    <bean id="sqlSessionFactoryTest" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:/datasource/sql-map-config.xml"/>
+        <property name="dataSource" ref="dataSourceTest"/>
+    </bean>
+
+    <bean id="testTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactoryTest"/>
+    </bean>
+
+    <!-- Annotation 을 사용한 트랜잭션 사용시 활성화 -->
+    <tx:annotation-driven/>
+
+</beans>
