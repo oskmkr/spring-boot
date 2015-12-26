@@ -5,10 +5,8 @@ import org.junit.Test;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
-import static org.junit.Assert.*;
-
 public class HtmlPageParserTest {
-    private HtmlPageParser parser = new HtmlPageParser();
+    private DoctcEventPageParser parser = new DoctcEventPageParser();
 
     @Test
     public void parse() throws IOException, URISyntaxException {

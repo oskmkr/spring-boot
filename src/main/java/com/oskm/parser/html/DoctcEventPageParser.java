@@ -7,21 +7,28 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
 
 /**
  * Created by oskm on 2015-12-06.
  */
-public class HtmlPageParser implements Parser {
+@Service
+public class DoctcEventPageParser implements Parser<DoctcEvent> {
 
-    private static final Logger LOG = LoggerFactory.getLogger(HtmlPageParser.class);
+    private static final Logger LOG = LoggerFactory.getLogger(DoctcEventPageParser.class);
 
 
-    public void parse(String url) throws URISyntaxException, IOException {
-        Document doc = Jsoup.parse(new URL("http://www.doctc.com/shop/event/event_main.php"), 3000);
+    public DoctcEvent parse(String url) {
+        DoctcEvent event = new DoctcEvent();
+        Document doc = null;
+        try {
+            doc = Jsoup.parse(new URL("http://www.doctc.com/shop/event/event_main.php"), 3000);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
         Elements elParent = doc.select("#event_top > div > div");
@@ -35,8 +42,6 @@ public class HtmlPageParser implements Parser {
 
             Elements thumbnail = el.select("div.thumbnail");
 
-            DoctcEvent event = new DoctcEvent();
-
             event.setLink(thumbnail.attr("onclick"));
             event.setMainImage(el.select("div.gdListImg > img").attr("src"));
             event.setTitle(el.select("div.gdListText > div.gdListName").html());
@@ -47,13 +52,10 @@ public class HtmlPageParser implements Parser {
             LOG.debug("타이틀 : " + event.getTitle());
             LOG.debug("기간 : " + event.getDuration());
 
-            //String s = el.html();
-
             //LOG.debug(s);
         }
 
-
-        //return event;
+        return event;
     }
 
 }

@@ -1,9 +1,14 @@
 package com.oskm.parser;
 
+import java.io.Serializable;
+
 /**
  * Created by oskm on 2015-12-21.
  */
-public class DoctcEvent {
+public class DoctcEvent implements Serializable {
+
+    private static final long serialVersionUID = -5634384620489650847L;
+
     private String link;
     private String mainImage;
     private String title;
