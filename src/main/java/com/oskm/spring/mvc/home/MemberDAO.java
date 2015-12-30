@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.HashMap;
 import java.util.Map;
 
-@Repository
+//@Repository
 public class MemberDAO {
     private static final String NAMESPACE = "oskm.test.Member.";
 

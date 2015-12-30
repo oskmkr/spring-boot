@@ -9,18 +9,26 @@
     <url>http://maven.apache.org</url>
     <!-- spring boot -->
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.3.1.RELEASE</version>
+    </parent>
+
     <properties>
-        <spring.version>3.2.8.RELEASE</spring.version>
+        <java.version>1.8</java.version>
+        <!--
+        <spring.version>4.2.1.RELEASE</spring.version>
+        -->
         <spring-security.version>3.2.1.RELEASE</spring-security.version>
         <hibernate-validator.version>4.2.0.Final</hibernate-validator.version>
         <mysql-connector-java.version>5.1.12</mysql-connector-java.version>
         <!-- jackson json parser -->
-        <jackson.version>1.9.6</jackson.version>
+        <jackson.version>2.6.4</jackson.version>
         <!-- mybatis -->
         <mybatis-spring.version>1.1.1</mybatis-spring.version>
         <webapp.directory>src/main/webapp</webapp.directory>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <tomcat.version>7.0.54</tomcat.version>
         <logback.version>1.1.2</logback.version>
         <slf4j.version>1.7.7</slf4j.version>
 
@@ -166,11 +174,6 @@
             <version>${hibernate-validator.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-jaxrs</artifactId>
-            <version>${jackson.version}</version>
-        </dependency>
-        <dependency>
             <groupId>commons-httpclient</groupId>
             <artifactId>commons-httpclient</artifactId>
             <version>3.1</version>
@@ -235,31 +238,6 @@
             <version>${mysql-connector-java.version}</version>
         </dependency>
 
-        <!-- mybatis -->
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-spring</artifactId>
-            <version>${mybatis-spring.version}</version>
-            <type>jar</type>
-            <scope>compile</scope>
-            <exclusions>
-                <exclusion>
-                    <artifactId>spring-jdbc</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>commons-dbcp</groupId>
-            <artifactId>commons-dbcp</artifactId>
-            <version>1.4</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.fernandospr</groupId>
-            <artifactId>javapns-jdk16</artifactId>
-            <version>2.2.1</version>
-        </dependency>
-        <!--// mybatis -->
         <dependency>
             <groupId>org.java-websocket</groupId>
             <artifactId>Java-WebSocket</artifactId>
@@ -273,41 +251,6 @@
             <version>4.0.21.Final</version>
             <scope>compile</scope>
         </dependency>
-
-        <!-- embed tomcat start -->
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-core</artifactId>
-            <version>${tomcat.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-logging-juli</artifactId>
-            <version>${tomcat.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-jasper</artifactId>
-            <version>${tomcat.version}</version>
-        </dependency>
-        <!--
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-jasper</artifactId>
-            <version>${tomcat.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-jasper-el</artifactId>
-            <version>${tomcat.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-jsp-api</artifactId>
-            <version>${tomcat.version}</version>
-        </dependency>
-        -->
-        <!-- embed tomcat end -->
         <!-- rabbit mq start -->
         <!--
         <dependency>
@@ -317,61 +260,12 @@
         </dependency>
         -->
         <!-- rabbit mq end -->
-        <!-- spring amqp start -->
-        <dependency>
-            <groupId>org.springframework.amqp</groupId>
-            <artifactId>spring-amqp</artifactId>
-            <version>1.3.5.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.amqp</groupId>
-            <artifactId>spring-rabbit</artifactId>
-            <version>1.3.5.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.amqp</groupId>
-            <artifactId>spring-erlang</artifactId>
-            <version>1.3.5.RELEASE</version>
-        </dependency>
-        <!-- spring amqp end -->
         <!-- spring boot start -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>1.1.5.RELEASE</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-logging</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.3.156</version>
         </dependency>
         <!-- spring boot end -->
-        <!-- spring-data-mongodb start -->
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-mongodb</artifactId>
-            <version>1.5.4.RELEASE</version>
-        </dependency>
-        <!-- spring-data-mongodb end-->
-        <!-- mongodb-java-driver start -->
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongo-java-driver</artifactId>
-            <version>2.12.3</version>
-        </dependency>
-        <!-- mongodb-java-driver end -->
-        <dependency>
-            <groupId>org.apache.curator</groupId>
-            <artifactId>curator-framework</artifactId>
-            <version>2.7.0</version>
-        </dependency>
-        <!-- google html compressor -->
         <dependency>
             <groupId>com.googlecode.htmlcompressor</groupId>
             <artifactId>htmlcompressor</artifactId>
@@ -402,30 +296,25 @@
             <artifactId>appengine-api-1.0-sdk</artifactId>
             <version>${appengine.target.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-datastore-protobuf</artifactId>
+            <version>v1beta2-rev1-3.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.fernandospr</groupId>
+            <artifactId>javapns-jdk16</artifactId>
+            <version>2.2.1</version>
+        </dependency>
     </dependencies>
-    <repositories>
-        <repository>
-            <id>repo1</id>
-            <url>http://repo1.maven.org/maven2/</url>
-        </repository>
-        <repository>
-            <id>repo2</id>
-            <url>http://repo2.maven.org/</url>
-        </repository>
-        <repository>
-            <id>mvnrepository</id>
-            <url>http://mvnrepository.com/</url>
-        </repository>
-        <repository>
-            <id>central</id>
-            <name>Central Repository</name>
-            <url>http://repo.maven.apache.org/maven2</url>
-            <layout>default</layout>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
+
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <resources>
@@ -480,8 +369,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
@@ -491,11 +380,18 @@
                 <version>9.2.1.v20140609</version>
                 <configuration>
                     <stopPort>8080</stopPort>
-                    <webAppSourceDirectory>webapp</webAppSourceDirectory>
                     <webApp>
-
                         <contextPath>/</contextPath>
                     </webApp>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <executable>java</executable>
+                    <mainClass>com.oskm.Application</mainClass>
                 </configuration>
             </plugin>
         </plugins>

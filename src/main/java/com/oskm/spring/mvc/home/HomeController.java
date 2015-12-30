@@ -18,8 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HomeController implements BeanFactoryAware, ApplicationContextAware {
 
     private static final Logger LOG = Logger.getLogger(HomeController.class);
-    @Autowired
-    private Domain domain;
+
     @Autowired
     private EventCrawler eventCrawler;
 
@@ -33,6 +32,7 @@ public class HomeController implements BeanFactoryAware, ApplicationContextAware
     }
 
     @RequestMapping(value = "analyze", method = {RequestMethod.GET})
+    @ResponseBody
     public String analyze() {
         LOG.debug("ana..");
         eventCrawler.analyzeDoctcEvent();

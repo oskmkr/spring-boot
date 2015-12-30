@@ -1,11 +1,10 @@
 package com.oskm.support.remote.httpclient4.parser;
 
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oskm.support.remote.httpclient.parser.HttpResponseParseException;
 import com.oskm.support.remote.httpclient.parser.HttpResponseParser;
-import net.sf.json.JSONObject;
-import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
