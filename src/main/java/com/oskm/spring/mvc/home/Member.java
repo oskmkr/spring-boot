@@ -1,10 +1,8 @@
 package com.oskm.spring.mvc.home;
 
-import com.oskm.support.BaseObject;
-
 import java.util.Date;
 
-public class Member extends BaseObject {
+public class Member {
 
     private String userId;
     private String nickName;

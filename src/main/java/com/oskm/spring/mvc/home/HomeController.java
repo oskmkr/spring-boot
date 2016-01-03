@@ -9,11 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
-@RequestMapping(value = "/")
+import java.util.HashMap;
+import java.util.Map;
+
 @Controller
 public class HomeController implements BeanFactoryAware, ApplicationContextAware {
 
@@ -23,12 +27,21 @@ public class HomeController implements BeanFactoryAware, ApplicationContextAware
     private EventCrawler eventCrawler;
 
     // @Secured("ROLE_ADMIN")
-    @RequestMapping(value = "Home", method = {RequestMethod.GET})
-    public String viewHome(/*@RequestParam Integer age*/) {
-        LOG.debug("home..");
+    @RequestMapping(value = "/hello")
+    public String viewHome(Model modelAndView) {
+        LOG.debug("### home..");
 
 
-        return "Home";
+        return "hello-world";
+    }
+
+    @RequestMapping("/hello2")
+    @ResponseBody
+    public Map<String, String> hello() {
+        Map<String, String> m = new HashMap<String, String>();
+        m.put("url", "www.home.com");
+
+        return m;
     }
 
     @RequestMapping(value = "analyze", method = {RequestMethod.GET})
