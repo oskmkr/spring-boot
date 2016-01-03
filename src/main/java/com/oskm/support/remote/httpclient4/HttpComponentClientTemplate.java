@@ -269,7 +269,7 @@ public class HttpComponentClientTemplate<Object> implements HttpClientTemplate {
         }
     }
 
-    protected CloseableHttpResponse doExecuteMethod(CloseableHttpClient httpClient, HttpUriRequest httpRequestBase) throws HttpException, IOException {
+    protected CloseableHttpResponse doExecuteMethod(CloseableHttpClient httpClient, HttpUriRequest httpRequestBase) throws IOException {
         return httpClient.execute(httpRequestBase);
     }
 

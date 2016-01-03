@@ -203,7 +203,7 @@ public class CommonsHttpClientTemplate<Object> implements HttpClientTemplate {
         }
     }
 
-    protected void doExecuteMethod(HttpClient httpClient, HttpMethod httpMethod) throws HttpException, IOException {
+    protected void doExecuteMethod(HttpClient httpClient, HttpMethod httpMethod) throws IOException {
         httpClient.executeMethod(httpMethod);
     }
 

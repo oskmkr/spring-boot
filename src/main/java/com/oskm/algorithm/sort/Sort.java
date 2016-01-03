@@ -12,5 +12,5 @@ package com.oskm.algorithm.sort;
  * Created by sungkyu.eo on 2015-03-23.
  */
 public interface Sort {
-    public int[] sort(final int[] list);
+    int[] sort(final int[] list);
 }

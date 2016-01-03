@@ -18,7 +18,7 @@ public interface HttpClientTemplate<T> {
      * �� ����Ѵ�
      */
     @Deprecated
-    public T execute(HttpClientParameters parameters) throws HttpClientException, IOException;
+    T execute(HttpClientParameters parameters) throws HttpClientException, IOException;
 
     /**
      * Parameter �� �����Ͽ� API ����ϴ� method
@@ -27,7 +27,7 @@ public interface HttpClientTemplate<T> {
      * @return
      * @throws HttpClientException
      */
-    public T execute(Map<String, String> parameters) throws HttpClientException;
+    T execute(Map<String, String> parameters) throws HttpClientException;
 
     /**
      * ���� ������ Parameter�� ���� ��� ����ϴ� method
@@ -35,7 +35,7 @@ public interface HttpClientTemplate<T> {
      * @return
      * @throws HttpClientException
      */
-    public T execute() throws HttpClientException;
+    T execute() throws HttpClientException;
 
     /**
      * HttpClientException �߻� �� throw���� �ʰ� ����Ʈ��(����Ÿ���� String�� ���� ����, �ٸ� Ÿ���� ���� null)���� �����ϴ� �޼ҵ�
@@ -45,7 +45,7 @@ public interface HttpClientTemplate<T> {
      * @return
      * @throws IOException
      */
-    public T executeQuietly(HttpClientParameters parameters) throws IOException;
+    T executeQuietly(HttpClientParameters parameters) throws IOException;
 
     /**
      * execute �޼ҵ� ���ο��� response InputStream�� Ư�� class�� parsing�ϴµ�, parsing�� ����� parser�� inject���ִ� �޼ҵ�
@@ -53,5 +53,5 @@ public interface HttpClientTemplate<T> {
      *
      * @param httpResponseParser
      */
-    public void setHttpResponseParser(HttpResponseParser<T> httpResponseParser);
+    void setHttpResponseParser(HttpResponseParser<T> httpResponseParser);
 }

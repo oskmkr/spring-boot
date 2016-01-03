@@ -34,10 +34,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     }
 
     private boolean isAuthenticate(String principal, String credentials) {
-        if (principal.equals(credentials)) {
-            return true;
-        }
-        return false;
+        return principal.equals(credentials);
     }
 
     @Override

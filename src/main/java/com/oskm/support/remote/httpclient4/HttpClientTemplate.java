@@ -19,12 +19,12 @@ import java.util.Map;
  */
 public interface HttpClientTemplate<T> {
 
-    public T execute(Map<String, String> parameters) throws HttpClientException, IOException;
+    T execute(Map<String, String> parameters) throws HttpClientException, IOException;
 
-    public T execute() throws HttpClientException, IOException;
+    T execute() throws HttpClientException, IOException;
 
-    public T executeQuietly(HttpClientParams parameters) throws IOException;
+    T executeQuietly(HttpClientParams parameters) throws IOException;
 
-    public void setHttpResponseParser(HttpResponseParser<T> httpResponseParser);
+    void setHttpResponseParser(HttpResponseParser<T> httpResponseParser);
 
 }

@@ -3,7 +3,7 @@ package com.oskm.security;
 public enum Role {
     ADMIN("admin"), MEMBER("member"), GUEST("guest");
 
-    private Role(String name) {
+    Role(String name) {
         this.name = name;
     }
 
