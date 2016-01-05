@@ -9,7 +9,7 @@ import java.util.Arrays;
 /**
  * Created by oskm on 2015-12-30.
  */
-@SpringBootApplication(scanBasePackages = "com.oskm")
+@SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {

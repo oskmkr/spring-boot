@@ -3,7 +3,10 @@ package com.oskm.apns;
 import javapns.Push;
 import javapns.communication.exceptions.CommunicationException;
 import javapns.communication.exceptions.KeystoreException;
+import javapns.notification.PushNotificationManager;
 import org.apache.log4j.Logger;
+
+import java.util.UUID;
 
 public class APNSMessageSender {
 
@@ -56,5 +59,4 @@ public class APNSMessageSender {
 
 	}
 	*/
-
 }
