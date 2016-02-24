@@ -7,31 +7,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created by oskm on 2016-01-04.
  */
 @Controller
-public class HomeController {
+public class EventListHomeController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(HomeController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EventListHomeController.class);
     @Autowired
     private EventCrawler eventCrawler;
 
-    @RequestMapping(value = "/")
-    public String loadHomePage(Model model) {
-        return "index";
-    }
+    @RequestMapping(value = "/eventList")
+    public ModelAndView list(Model model) {
 
-    @RequestMapping(value = "/crawler")
-    public String crawler(Model model) {
-
-        eventCrawler.analyzeDoctcEvent();
         DoctcEvent event = eventCrawler.findDoctcEvent();
 
-        LOG.debug("[event model]" + event);
-        System.out.println("[event model]" + event);
+        model.addAttribute("doctcEvent", event);
 
-        return "crawler";
+        return new ModelAndView("list", model.asMap());
     }
 }

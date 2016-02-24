@@ -10,3 +10,4 @@ bin
 *.class
 *.bak
 *.iml
+*.db
