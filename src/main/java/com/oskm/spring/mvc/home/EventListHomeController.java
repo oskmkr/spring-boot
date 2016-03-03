@@ -22,6 +22,8 @@ public class EventListHomeController {
     @RequestMapping(value = "/eventList")
     public ModelAndView list(Model model) {
 
+        eventCrawler.analyzeDoctcEvent();
+
         DoctcEvent event = eventCrawler.findDoctcEvent();
 
         model.addAttribute("doctcEvent", event);
