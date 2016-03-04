@@ -3,6 +3,8 @@ package com.oskm;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.Arrays;
 
@@ -10,7 +12,7 @@ import java.util.Arrays;
  * Created by oskm on 2015-12-30.
  */
 @SpringBootApplication
-public class Application {
+public class Application extends WebMvcConfigurerAdapter {
 
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(Application.class, args);
@@ -22,6 +24,12 @@ public class Application {
         for (String beanName : beanNames) {
             System.out.println(beanName);
         }
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources")
+                .setCachePeriod(0);
     }
 
 }

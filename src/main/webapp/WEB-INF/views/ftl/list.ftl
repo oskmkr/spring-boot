@@ -1,4 +1,5 @@
-<html>
+<#setting url_escaping_charset="UTF-8">
+<html lang="ko">
 <head>
     <title>event list</title>
 </head>
