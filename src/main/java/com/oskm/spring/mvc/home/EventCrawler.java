@@ -1,43 +1,13 @@
 package com.oskm.spring.mvc.home;
 
-import com.oskm.db.file.FileStoreTemplate;
-import com.oskm.parser.DoctcEvent;
-import com.oskm.parser.Parser;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
-
-import java.io.IOException;
+import java.util.List;
 
 /**
- * Created by oskmkr on 2015-12-26.
+ * Created by oskm on 2016-03-06.
  */
-@Service
-public class EventCrawler {
+public interface EventCrawler<T> {
 
+    void analyze();
 
-    @Autowired
-    @Qualifier("doctcEventPageParser")
-    private Parser<DoctcEvent> parser;
-
-    @Autowired
-    private FileStoreTemplate<DoctcEvent> fileStoreTemplate;
-
-    public void analyzeDoctcEvent() {
-        DoctcEvent event = parser.parse("");
-
-        try {
-            fileStoreTemplate.save(event);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public DoctcEvent findDoctcEvent() {
-        DoctcEvent event = fileStoreTemplate.load();
-
-        return event;
-    }
-
-
+    List<T> findEvent();
 }

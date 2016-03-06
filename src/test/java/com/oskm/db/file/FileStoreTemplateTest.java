@@ -1,5 +1,6 @@
 package com.oskm.db.file;
 
+import com.oskm.parser.ClienEvent;
 import com.oskm.parser.DoctcEvent;
 import org.hamcrest.core.Is;
 import org.junit.Test;
@@ -16,6 +17,8 @@ import static org.hamcrest.core.Is.is;
  */
 public class FileStoreTemplateTest {
 
+    private static final String FILE_NAME = "tmp";
+
     @Test
     public void saveAndLoad() throws IOException {
 
@@ -23,9 +26,9 @@ public class FileStoreTemplateTest {
 
         String str = "test";
 
-        template.save(str);
+        template.save(FILE_NAME, str);
 
-        String actual = template.load();
+        String actual = template.load(FILE_NAME);
 
         assertThat(actual, is(str));
 
@@ -34,16 +37,16 @@ public class FileStoreTemplateTest {
     @Test
     public void saveAndLoadArrayList() throws IOException {
 
-        FileStoreTemplate<ArrayList> template = new FileStoreTemplate<ArrayList>();
+        FileStoreTemplate<List<String>> template = new FileStoreTemplate<>();
 
 
-        ArrayList<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<String>();
         list.add("a");
         list.add("b");
 
-        template.save(list);
+        template.save(FILE_NAME, list);
 
-        List<String> actual = template.load();
+        List<String> actual = template.load(FILE_NAME);
 
         System.out.printf(actual.get(0));
 
@@ -59,9 +62,27 @@ public class FileStoreTemplateTest {
         DoctcEvent event = new DoctcEvent();
         event.setTitle("이벤트명");
 
-        template.save(event);
+        template.save(FILE_NAME, event);
 
-        DoctcEvent actual = template.load();
+        DoctcEvent actual = template.load(FILE_NAME);
+
+        System.out.printf(actual.getTitle());
+
+        assertThat(actual.getTitle(), is(event.getTitle()));
+
+    }
+
+    @Test
+    public void saveAndLoad_ClienEvent() throws IOException {
+
+        FileStoreTemplate<ClienEvent> template = new FileStoreTemplate<ClienEvent>();
+
+        ClienEvent event = new ClienEvent();
+        event.setTitle("이벤트명");
+
+        template.save(FILE_NAME, event);
+
+        ClienEvent actual = template.load(FILE_NAME);
 
         System.out.printf(actual.getTitle());
 

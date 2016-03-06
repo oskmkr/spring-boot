@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 /**
  * Created by oskm on 2016-01-04.
  */
@@ -16,7 +18,7 @@ public class HomeController {
 
     private static final Logger LOG = LoggerFactory.getLogger(HomeController.class);
     @Autowired
-    private EventCrawler eventCrawler;
+    private DoctcEventCrawler eventCrawler;
 
     @RequestMapping(value = "/")
     public String loadHomePage(Model model) {
@@ -26,11 +28,13 @@ public class HomeController {
     @RequestMapping(value = "/crawler")
     public String crawler(Model model) {
 
-        eventCrawler.analyzeDoctcEvent();
-        DoctcEvent event = eventCrawler.findDoctcEvent();
+        eventCrawler.analyze();
+        List<DoctcEvent> eventList = eventCrawler.findEvent();
 
-        LOG.debug("[event model]" + event);
-        System.out.println("[event model]" + event);
+        for (DoctcEvent event : eventList) {
+            LOG.debug("[event model]" + event);
+            System.out.println("[event model]" + event);
+        }
 
         return "crawler";
     }

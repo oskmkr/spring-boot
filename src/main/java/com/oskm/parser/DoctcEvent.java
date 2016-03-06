@@ -15,7 +15,7 @@ public class DoctcEvent implements Serializable {
     private String duration;
 
     public String getLink() {
-        return link;
+        return "http://www.doctc.com" + link.replaceAll("\"", "").replaceAll("location.href=", "");
     }
 
     public void setLink(String link) {
@@ -23,7 +23,7 @@ public class DoctcEvent implements Serializable {
     }
 
     public String getMainImage() {
-        return mainImage;
+        return "http://www.doctc.com" + mainImage;
     }
 
     public void setMainImage(String mainImage) {

@@ -14,11 +14,11 @@ import java.io.*;
 public class FileStoreTemplate<T> {
     private static final Logger LOG = LoggerFactory.getLogger(FileStoreTemplate.class);
 
-    public void save(T obj) throws IOException {
+    public void save(String fileName, T obj) throws IOException {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
-            fos = FileUtils.openOutputStream(new File("data.db"));
+            fos = FileUtils.openOutputStream(new File(fileName + ".db"));
 
             oos = new ObjectOutputStream(fos);
 
@@ -37,13 +37,13 @@ public class FileStoreTemplate<T> {
         }
     }
 
-    public T load() {
+    public T load(String fileName) {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         T readObj = null;
 
         try {
-            fis = FileUtils.openInputStream(new File("data.db"));
+            fis = FileUtils.openInputStream(new File(fileName + ".db"));
             ois = new ObjectInputStream(fis);
 
             readObj = (T) ois.readObject();

@@ -1,9 +1,14 @@
 package com.oskm.parser;
 
+import java.io.Serializable;
+
 /**
  * Created by oskm on 2016-03-03.
  */
-public class ClienEvent {
+public class ClienEvent implements Serializable {
+
+    private static final long serialVersionUID = 8599115566008150034L;
+
     private String category;
     private String title;
     private String link;
@@ -26,7 +31,7 @@ public class ClienEvent {
     }
 
     public String getLink() {
-        return link;
+        return "http://www.clien.net/cs2" + link.replaceAll("\\.\\.", "");
     }
 
     public void setLink(String link) {

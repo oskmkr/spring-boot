@@ -10,7 +10,7 @@ public class HtmlPageParserTest {
 
     @Test
     public void parse() throws IOException, URISyntaxException {
-        parser.parse("");
+        parser.parse();
     }
 
 }
