@@ -48,6 +48,6 @@ public class EventListController {
         model.addAttribute("doctcEventList", doctcEventList);
         model.addAttribute("clienEventList", clienEventList);
 
-        return new ModelAndView("list", model.asMap());
+        return new ModelAndView("EventList", model.asMap());
     }
 }

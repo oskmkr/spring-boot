@@ -13,9 +13,11 @@ import java.util.Properties;
  */
 @Configuration
 public class ViewConfig {
+
     @Bean
     public FreeMarkerConfigurer freemarkerConfig() {
         FreeMarkerConfigurer configurer = new FreeMarkerConfigurer();
+        //configurer.setTemplateLoaderPath("classpath:/templates/ftl/");
         configurer.setTemplateLoaderPath("/WEB-INF/views/ftl/");
         Properties freemarkerSettings = new Properties();
         freemarkerSettings.setProperty("default_encoding", "UTF-8");
@@ -27,7 +29,7 @@ public class ViewConfig {
     @Bean(name = "freeMarkerViewResolver")
     public ViewResolver getFreeMarkerViewResolver() {
         FreeMarkerViewResolver resolver = new FreeMarkerViewResolver();
-        //resolver.setPrefix("/WEB-INF/views/");
+        //resolver.setPrefix("views/");
         resolver.setSuffix(".ftl");
         resolver.setOrder(1);
         resolver.setContentType("text/html;charset=UTF-8");

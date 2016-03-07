@@ -3,7 +3,7 @@
     <title>hello freemarker</title>
 </head>
 <body>
-hello world...
+hello world... ( freemarker)
 </body>
 </head>
 </html>
