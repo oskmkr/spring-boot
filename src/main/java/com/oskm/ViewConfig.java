@@ -17,8 +17,8 @@ public class ViewConfig {
     @Bean
     public FreeMarkerConfigurer freemarkerConfig() {
         FreeMarkerConfigurer configurer = new FreeMarkerConfigurer();
-        //configurer.setTemplateLoaderPath("classpath:/templates/ftl/");
-        configurer.setTemplateLoaderPath("/WEB-INF/views/ftl/");
+        configurer.setTemplateLoaderPath("classpath:/views/ftl/");
+        //configurer.setTemplateLoaderPath("/WEB-INF/views/ftl/");
         Properties freemarkerSettings = new Properties();
         freemarkerSettings.setProperty("default_encoding", "UTF-8");
         configurer.setFreemarkerSettings(freemarkerSettings);
