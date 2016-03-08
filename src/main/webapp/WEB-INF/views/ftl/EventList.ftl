@@ -114,8 +114,9 @@
 
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right"><#--YOUR NAVIGATION ITEMS STRAT BELOW-->
-                    <li><a href="#clien"><span class="btnicon icon-user"></span>clien</a></li>
-                    <li><a href="#doctc"><span class="btnicon icon-cup"></span>doctc</a></li>
+                    <li><a href="#clien"><span class="btnicon icon-user"></span>클리앙</a></li>
+                    <li><a href="#ppompu"><span class="btnicon icon-user"></span>뽐뿌</a></li>
+                    <li><a href="#doctc"><span class="btnicon icon-cup"></span>독특닷컴</a></li>
                     <#--
                     <li><a href="#portfolio"><span class="btnicon icon-rocket"></span>Portfolio</a></li>
                     <li><a href="#testimonials"><span class="btnicon icon-bubble"></span>Testimonials</a></li>
@@ -143,19 +144,45 @@ TESTIMONIAL SECTION START
         <hr class="separetor">
     </div><#-- TESTIMONIAL SECTIONHEAD END -->
 
+    <div class="row">
+    <#list clienEventList as clienEvent>
+        <a class="black-link" href="${clienEvent.link}">
+        <div class="col-md-6 wow bounceIn" data-wow-duration="2s">
+            <div class="clientsphoto">
+                <img src="img/honey_128.png" alt="">
+            </div>
+            <div class="quote">
+                <div>${clienEvent.category} ${clienEvent.title}</div>
+                <div>${clienEvent.writeDate}</div>
+            </div>
+        </div>
+        </a>
+    </#list>
+    </div>
+</div><#-- TESTIMONIAL SECTION END -->
+
+<div id="ppompu" class="container">
+    <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
+        <span class="bigicon icon-bubbles"></span>
+        <h3>뽐뿌 이벤트 소식</h3>
+        <h4>뽐뿌 최신 이벤트 소식</h4>
+        <hr class="separetor">
+    </div><#-- TESTIMONIAL SECTIONHEAD END -->
+
 <#-- TESTIMONIAL ITEMS START -->
     <div class="row">
     <#-- 1ST TESTIMONIAL ITEM -->
-    <#list clienEventList as clienEvent>
+    <#list ppompuEventList as ppompuEvent>
         <div class="col-md-6 wow bounceIn" data-wow-duration="2s">
+            <a href="${ppompuEvent.link}">
             <div class="clientsphoto">
-                <a href="${clienEvent.link}"><img src="img/honey_128.png" alt=""></a>
+                <a href="${ppompuEvent.link}"><img src="img/honey_128.png" alt=""></a>
             </div>
-
             <div class="quote">
-                <div>${clienEvent.category} ${clienEvent.title}</div>
-                <div><a href="${clienEvent.link}">바로가기</a></div>
+                <div>${ppompuEvent.title}</div>
+                <h5>${ppompuEvent.writeDate}</h5>
             </div>
+            </a>
         </div><#-- 1ST TESTIMONIAL ITEM END -->
     </#list>
 
@@ -175,85 +202,21 @@ TESTIMONIAL SECTION START
     <#-- 1ST TESTIMONIAL ITEM -->
     <#list doctcEventList as doctcEvent>
         <div class="col-md-6 wow bounceIn" data-wow-duration="2s">
+            <a href="${doctcEvent.link}">
             <div class="clientsphoto">
                 <a href="${doctcEvent.link}"><img src="${doctcEvent.mainImage}" alt=""></a>
             </div>
-
             <div class="quote">
                 <div>${doctcEvent.title}</div>
                 <h5>${doctcEvent.duration}</h5>
-                <div><a href="${doctcEvent.link}">바로가기</a></div>
             </div>
+            </a>
         </div><#-- 1ST TESTIMONIAL ITEM END -->
     </#list>
 
     </div>
 </div><#-- TESTIMONIAL SECTION END -->
-<#-- ===========================
-SERVICE SECTION START
-=========================== --#>
-<div id="clien" class="container">
-    <#-- SERVICE SECTION HEADING START --#>
-    <div class="sectionhead  row wow fadeInUp">
-        <span class="bigicon icon-cup "></span>
-        <h3>클리앙 알뜰 게시판</h3>
-        <hr class="separetor">
-    </div><#--SERVICE SECTION HEADING END-->
 
-    <#-- SERVICE ITEMS START --#>
-    <div class="row">
-    <#list clienEventList as clienEvent>
-        <div class="col-md-10 col-lg-4 wow fadeInUp" data-wow-duration="3s">
-            <a href="${clienEvent.link}"><img src="img/s1.png" alt=""></a>
-            <h4>${clienEvent.category} ${clienEvent.title}</h4>
-            <p><a href="${clienEvent.link}">이벤트보기</a></p>
-        </div> <#-- ITEM END --#>
-    </#list>
-    </div><#-- SERVICE ITEMS END-->
-
-    <#-- SERVICE SECTION HEADING START --#>
-    <div class="sectionhead  row wow fadeInUp">
-        <span class="bigicon icon-cup "></span>
-        <h3>독특 이벤트 게시판</h3>
-        <hr class="separetor">
-    </div><#--SERVICE SECTION HEADING END-->
-
-    <#-- SERVICE ITEMS START --#>
-    <div class="row">
-    <#list doctcEventList as doctcEvent>
-        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="3s">
-            <a href="${doctcEvent.link}"><img src="${doctcEvent.mainImage}" alt=""></a>
-            <h4>${doctcEvent.title}</h4>
-            <p>${doctcEvent.duration}, <a href="${doctcEvent.link}">바로가기</a></p>
-        </div> <#-- ITEM END --#>
-    </#list>
-    </div><#-- SERVICE ITEMS END--#>
-
-</div><#-- SERVICE SECTION END --#>
-
-<div id="doctc" class="container">
-    <#-- SERVICE SECTION HEADING START --#>
-    <div class="sectionhead  row wow fadeInUp">
-        <span class="bigicon icon-cup "></span>
-        <h3>독특 이벤트 게시판</h3>
-        <hr class="separetor">
-    </div><#--SERVICE SECTION HEADING END-->
-
-    <#-- SERVICE ITEMS START --#>
-    <div class="row">
-    <#list doctcEventList as doctcEvent>
-        <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-duration="3s">
-            <a href="${doctcEvent.link}"><img src="${doctcEvent.mainImage}" alt=""></a>
-            <h4>${doctcEvent.title}</h4>
-            <p>${doctcEvent.duration}, <a href="${doctcEvent.link}">바로가기</a></p>
-        </div> <#-- ITEM END --#>
-    </#list>
-    </div><#-- SERVICE ITEMS END--#>
-
-</div><#-- SERVICE SECTION END -->
-<#-- ===========================
-PORTFOLIO SECTION START
-=========================== -->
 
 <div id="portfolio">
     <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
@@ -290,8 +253,9 @@ FOOTER START
         <div class="footerlinks"><#-- FOOTER LINKS START -->
             <ul>
                 <li><a href="#hero">Home</a></li>
-                <li><a href="#clien">Clien</a></li>
-                <li><a href="#doctc">Doctc</a></li>
+                <li><a href="#clien">클리앙</a></li>
+                <li><a href="#ppompu">뽐뿌</a></li>
+                <li><a href="#doctc">독특닷컴</a></li>
                 <#--
                 <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
