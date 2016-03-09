@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 /**
  * Created by oskm on 2016-03-09.
  */
-@Configuration
+//@Configuration
 public class StaticResourceConfig extends WebMvcConfigurerAdapter {
 
     @Override
