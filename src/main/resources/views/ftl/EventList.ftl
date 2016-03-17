@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,7 +37,10 @@ FAVICONS
 <#-- ===========================
 STYLESHEETS
 =========================== -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<#--
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+-->
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/preloader.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -283,8 +286,10 @@ FOOTER START
 </footer><#-- FOOTER END -->
 
 <#-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<#--
 <script src="//code.jquery.com/jquery-latest.min.js"></script>
-
+-->
+<script src="/webjars/jquery/1.12.1/dist/jquery.min.js"></script>
 <#-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
