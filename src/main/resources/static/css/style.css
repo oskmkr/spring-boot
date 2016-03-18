@@ -9,7 +9,7 @@
 TYPOGRAPHY
 ================================*/
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: '나눔고딕',NanumGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif!important;
     line-height: 1.8em;
 }
 
@@ -32,14 +32,17 @@ ul{padding: 0;}
 a{color: #ea9312}
 a:hover{color: #c3c3c3; text-decoration: none;}
 
+body {
+    background-color:#FDCC7F;
+}
 #services{text-align: center;}
 .col-md-4, .col-md-6{padding-bottom: 50px;}
 .col-md-3 {padding: 0;}
 
 .sectionhead{
     text-align: center;
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 hr.separetor{

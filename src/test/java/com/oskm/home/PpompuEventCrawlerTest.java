@@ -1,4 +1,4 @@
-package com.oskm.spring.mvc.home;
+package com.oskm.home;
 
 import com.oskm.Application;
 import com.oskm.db.file.FileStoreTemplate;

@@ -6,7 +6,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.oskm.spring.mvc.home;
+package com.oskm.home;
 
 /**
  * Created by sungkyu.eo on 2014-12-18.

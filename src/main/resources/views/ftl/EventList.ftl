@@ -86,6 +86,7 @@ HERO AREA
 =========================== -->
     <div id="hero">
         <div class="container herocontent">
+            <hr/>
             <h2 class="wow fadeInUp" data-wow-duration="2s">꿀 소식 ( useful events news )</h2>
             <h4 class="wow fadeInDown" data-wow-duration="3s">다양한 꿀 이벤트 소식을 한눈에.</h4>
         </div>
@@ -135,7 +136,7 @@ HERO AREA
         </div>
     </nav><#--navbar end-->
 </header><#--header end-->
-<hr><#-- SECTION SEPARETOR LINE -->
+<#-- SECTION SEPARETOR LINE -->
 <#-- ===========================
 TESTIMONIAL SECTION START
 =========================== -->
@@ -150,7 +151,7 @@ TESTIMONIAL SECTION START
     <div class="row">
     <#list clienEventList as clienEvent>
         <a class="black-link" href="${clienEvent.link}">
-            <div class="col-md-6 wow bounceIn" data-wow-duration="2s">
+            <div class="col-md-6 wow zoomIn" data-wow-duration="1s">
                 <div class="clientsphoto">
                     <img src="img/honey_128.png" alt="">
                 </div>
@@ -296,7 +297,7 @@ FOOTER START
 <#--Other necessary scripts-->
 <script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/jquery.jribbble-1.0.1.ugly.js"></script>
-<script src="js/drifolio.js"></script>
+<script src="js/eventList.js"></script>
 <script src="js/wow.min.js"></script>
 <script>new WOW().init();</script>
 </body>

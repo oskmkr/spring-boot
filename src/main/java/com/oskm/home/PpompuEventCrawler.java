@@ -1,4 +1,4 @@
-package com.oskm.spring.mvc.home;
+package com.oskm.home;
 
 import com.oskm.db.file.FileStoreTemplate;
 import com.oskm.parser.PpompuEvent;

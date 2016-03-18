@@ -6,7 +6,7 @@
  * Vestibulum commodo. Ut rhoncus gravida arcu.
  */
 
-package com.oskm.spring.mvc.home;
+package com.oskm.home;
 
 import org.springframework.stereotype.Service;
 

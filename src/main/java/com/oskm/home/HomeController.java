@@ -1,4 +1,4 @@
-package com.oskm.spring.mvc.home;
+package com.oskm.home;
 
 import com.oskm.parser.DoctcEvent;
 import org.slf4j.Logger;
@@ -22,7 +22,7 @@ public class HomeController {
 
     @RequestMapping(value = "/")
     public String loadHomePage(Model model) {
-        return "index";
+        return "forward:eventList";
     }
 
     @RequestMapping(value = "/crawler")

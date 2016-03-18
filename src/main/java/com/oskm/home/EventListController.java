@@ -1,4 +1,4 @@
-package com.oskm.spring.mvc.home;
+package com.oskm.home;
 
 import com.oskm.parser.ClienEvent;
 import com.oskm.parser.DoctcEvent;

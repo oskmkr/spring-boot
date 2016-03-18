@@ -1,7 +1,6 @@
-package com.oskm.spring.mvc.home;
+package com.oskm.home;
 
 import com.oskm.db.file.FileStoreTemplate;
-import com.oskm.parser.ClienEvent;
 import com.oskm.parser.DoctcEvent;
 import com.oskm.parser.Parser;
 import org.springframework.beans.factory.annotation.Autowired;

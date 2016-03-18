@@ -1,17 +1,14 @@
-package com.oskm.spring.mvc.home;
+package com.oskm.home;
 
-import com.oskm.AppConfiguration;
 import com.oskm.Application;
 import com.oskm.db.file.FileStoreTemplate;
 import com.oskm.parser.ClienEvent;
 import com.oskm.parser.Parser;
-import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ContextConfiguration;
