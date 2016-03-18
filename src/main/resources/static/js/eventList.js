@@ -23,9 +23,9 @@ $(function () {
 //========================
 $(window).load(function () { // makes sure the whole site is loaded
     $('#status').fadeOut(); // will first fade out the loading animation
-    $('#preloader').delay(350).fadeOut('fast');
+    $('#preloader').delay(200).fadeOut('fast');
     // will fade out the white DIV that covers the website.
-    $('body').delay(350).css({'overflow': 'visible'});
+    $('body').delay(200).css({'overflow': 'visible'});
 })
 //========================
 //CUSTOM SCROLLBAR

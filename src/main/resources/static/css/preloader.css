@@ -11,12 +11,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #363942; /* preloader background color */
+    /*background-color: #363942; /* preloader background color */
+    background-color: #fff; /* preloader background color */
     z-index: 99; /* makes sure it stays on top */
 }
 
 #status {
-    color: #fff;
+    /*color: #fff;*/
+    color: #ff6736;
     font-size: 6em;
     text-align: center;
     position: absolute;

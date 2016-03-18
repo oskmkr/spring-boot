@@ -45,6 +45,7 @@ STYLESHEETS
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/bootstrap-material-design.css">
 
 <#-- ===========================
 ICONS:
@@ -76,7 +77,7 @@ GOOGLE FONTS
 <#-- Preloader -->
 <div id="preloader">
     <div id="status">
-        <div class="loadicon icon-moustache wow tada infinite" data-wow-duration="8s"></div>
+        <div class="loadicon icon-cloud-download wow tada infinite" data-wow-duration="8s"></div>
     </div>
 </div>
 
@@ -86,7 +87,7 @@ HERO AREA
 =========================== -->
     <div id="hero">
         <div class="container herocontent">
-            <hr/>
+            <h4>&nbsp;</h4>
             <h2 class="wow fadeInUp" data-wow-duration="2s">꿀 소식 ( useful events news )</h2>
             <h4 class="wow fadeInDown" data-wow-duration="3s">다양한 꿀 이벤트 소식을 한눈에.</h4>
         </div>
@@ -98,7 +99,7 @@ HERO AREA
 <#-- ===========================
  NAVBAR START
  =========================== -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
         <div class="container">
 
             <div class="navbar-header">
@@ -126,7 +127,8 @@ HERO AREA
                 <li><a href="#testimonials"><span class="btnicon icon-bubble"></span>Testimonials</a></li>
                 -->
                 <#--don't forget to replace my email address below with yours-->
-                    <li><a href="mailto:oskmkr@naver.com"><span class="btnicon icon-envelope-open"></span>Contact</a></li>
+                    <li><a href="mailto:oskmkr@naver.com"><span class="btnicon icon-envelope-open"></span>Contact</a>
+                    </li>
                 <#--
                 <li class="active"><a href=""><span class="btnicon icon-cloud-download"></span>Download CV</a></li>
                 -->
@@ -140,6 +142,8 @@ HERO AREA
 <#-- ===========================
 TESTIMONIAL SECTION START
 =========================== -->
+
+
 <div id="clien" class="container">
     <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
         <span class="bigicon icon-bubbles"></span>
@@ -149,19 +153,51 @@ TESTIMONIAL SECTION START
     </div><#-- TESTIMONIAL SECTIONHEAD END -->
 
     <div class="row">
+
     <#list clienEventList as clienEvent>
-        <a class="black-link" href="${clienEvent.link}">
-            <div class="col-md-6 wow zoomIn" data-wow-duration="1s">
-                <div class="clientsphoto">
-                    <img src="img/honey_128.png" alt="">
+
+        <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
+            <a class="black-link" href="${clienEvent.link}">
+                <div class="panel-body">
+                    <div class="clientsphoto">
+                        <img src="img/honey_128.png" alt="">
+                    </div>
+                    <div class="quote">
+                        <div>${clienEvent.category} ${clienEvent.title}</div>
+                        <h5>${clienEvent.writeDate}</h5>
+                    </div>
                 </div>
-                <div class="quote">
-                    <div>${clienEvent.category} ${clienEvent.title}</div>
-                    <div>${clienEvent.writeDate}</div>
-                </div>
-            </div>
-        </a>
+            </a>
+        </div>
+
     </#list>
+    <#--
+<#list clienEventList as clienEvent>
+    <div class="col-md-4">
+        <div class="bs-component">
+            <div class="well ">
+                <img src="img/honey_48.png" alt="">
+            ${clienEvent.category} ${clienEvent.title}
+            </div>
+            <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+        </div>
+    </div>
+</#list>
+
+<#list clienEventList as clienEvent>
+    <a class="black-link" href="${clienEvent.link}">
+        <div class="col-md-6 wow zoomIn" data-wow-duration="1s">
+            <div class="clientsphoto">
+                <img src="img/honey_128.png" alt="">
+            </div>
+            <div class="quote">
+                <div>${clienEvent.category} ${clienEvent.title}</div>
+                <div>${clienEvent.writeDate}</div>
+            </div>
+        </div>
+    </a>
+</#list>
+-->
     </div>
 </div><#-- TESTIMONIAL SECTION END -->
 
@@ -175,9 +211,24 @@ TESTIMONIAL SECTION START
 
 <#-- TESTIMONIAL ITEMS START -->
     <div class="row">
-    <#-- 1ST TESTIMONIAL ITEM -->
     <#list ppompuEventList as ppompuEvent>
-        <div class="col-md-6 wow bounceIn" data-wow-duration="2s">
+        <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
+            <a class="black-link" href="${ppompuEvent.link}">
+                <div class="panel-body">
+                    <div class="clientsphoto">
+                        <img src="img/honey_128.png" alt="">
+                    </div>
+                    <div class="quote">
+                        <div>${ppompuEvent.title}</div>
+                        <h5>${ppompuEvent.writeDate}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </#list>
+    <#--
+    <#list ppompuEventList as ppompuEvent>
+        <div class="col-md-6 wow zoomIn" data-wow-duration="1s">
             <a href="${ppompuEvent.link}">
                 <div class="clientsphoto">
                     <a href="${ppompuEvent.link}"><img src="img/honey_128.png" alt=""></a>
@@ -187,25 +238,26 @@ TESTIMONIAL SECTION START
                     <h5>${ppompuEvent.writeDate}</h5>
                 </div>
             </a>
-        </div><#-- 1ST TESTIMONIAL ITEM END -->
+        </div>
     </#list>
+        -->
 
     </div>
 </div><#-- TESTIMONIAL SECTION END -->
-
+<#--
 <div id="doctc" class="container">
     <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
         <span class="bigicon icon-bubbles"></span>
         <h3>Doctc.com 이벤트 소식</h3>
         <h4>Doctc.com 최신 이벤트 소식</h4>
         <hr class="separetor">
-    </div><#-- TESTIMONIAL SECTIONHEAD END -->
+    </div>
 
-<#-- TESTIMONIAL ITEMS START -->
+
     <div class="row">
-    <#-- 1ST TESTIMONIAL ITEM -->
+
     <#list doctcEventList as doctcEvent>
-        <div class="col-md-6 wow bounceIn" data-wow-duration="2s">
+        <div class="col-md-6 wow zoomIn" data-wow-duration="1s">
             <a href="${doctcEvent.link}">
                 <div class="clientsphoto">
                     <a href="${doctcEvent.link}"><img src="${doctcEvent.mainImage}" alt=""></a>
@@ -215,12 +267,12 @@ TESTIMONIAL SECTION START
                     <h5>${doctcEvent.duration}</h5>
                 </div>
             </a>
-        </div><#-- 1ST TESTIMONIAL ITEM END -->
+        </div>
     </#list>
 
     </div>
-</div><#-- TESTIMONIAL SECTION END -->
-
+</div>
+-->
 
 <div id="portfolio">
     <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
