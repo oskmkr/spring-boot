@@ -42,10 +42,11 @@ STYLESHEETS
 -->
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/preloader.css">
-    <link rel="stylesheet" href="css/style.css">
+
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/bootstrap-material-design.css">
+    <link rel="stylesheet" href="css/style.css">
 
 <#-- ===========================
 ICONS:
@@ -158,7 +159,7 @@ TESTIMONIAL SECTION START
 
         <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
             <a class="black-link" href="${clienEvent.link}">
-                <div class="panel-body">
+                <div class="panel-body latest-item">
                     <div class="clientsphoto">
                         <img src="img/honey_128.png" alt="">
                     </div>
