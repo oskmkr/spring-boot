@@ -2,7 +2,9 @@ package com.oskm.home;
 
 import com.oskm.parser.ClienEvent;
 import com.oskm.parser.DoctcEvent;
+import com.oskm.parser.Event;
 import com.oskm.parser.PpompuEvent;
+import com.oskm.parser.html.PpompuEventParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,9 +44,20 @@ public class EventListController {
         }
         */
 
-        model.addAttribute("doctcEventList", doctcEventList);
+        List<ClienEvent> top3ClienEventList = new TopReadEventFinder<ClienEvent>().find(clienEventList);
+        List<PpompuEvent> top3PpompuEventList = new TopReadEventFinder<PpompuEvent>().find(ppompuEventList);
+
+        List<Event> top3EventList = new ArrayList<Event>();
+        top3EventList.addAll(top3ClienEventList);
+        top3EventList.addAll(top3PpompuEventList);
+
+
+        model.addAttribute("top3EventList", top3EventList);
+        model.addAttribute("top3ClienEventList", top3ClienEventList);
+        model.addAttribute("top3PpompuEventList", top3PpompuEventList);
         model.addAttribute("clienEventList", clienEventList);
         model.addAttribute("ppompuEventList", ppompuEventList);
+        model.addAttribute("doctcEventList", doctcEventList);
 
         return new ModelAndView("EventList", model.asMap());
     }
@@ -59,6 +73,5 @@ public class EventListController {
     @Autowired
     @Qualifier("ppompuEventCrawler")
     private EventCrawler ppompuEventCrawler;
-
 
 }

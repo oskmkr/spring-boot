@@ -145,6 +145,39 @@ TESTIMONIAL SECTION START
 =========================== -->
 
 
+
+<div id="topReadEvent" class="container">
+    <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
+        <span class="bigicon icon-bubbles"></span>
+        <h3>Top3 조회수 이벤트</h3>
+        <h4>가장 조회가 많이 된 이벤트 소식</h4>
+        <hr class="separetor">
+    </div><#-- TESTIMONIAL SECTIONHEAD END -->
+
+    <div class="row">
+
+    <#list top3EventList as event>
+
+        <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
+            <a class="black-link" href="${event.link}">
+                <div class="panel-body latest-item">
+                    <div class="clientsphoto">
+                        <img src="img/honey_128.png" alt="">
+                    </div>
+                    <div class="quote">
+                        <div>${event.category} ${event.title}</div>
+                        <h5>${event.writeDate}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </#list>
+
+    </div>
+</div>
+
+
 <div id="clien" class="container">
     <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
         <span class="bigicon icon-bubbles"></span>
@@ -200,7 +233,7 @@ TESTIMONIAL SECTION START
 </#list>
 -->
     </div>
-</div><#-- TESTIMONIAL SECTION END -->
+</div>
 
 <div id="ppompu" class="container">
     <div class="sectionhead wow bounceInUp" data-wow-duration="2s">

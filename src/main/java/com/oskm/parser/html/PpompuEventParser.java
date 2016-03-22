@@ -55,6 +55,18 @@ public class PpompuEventParser implements Parser<PpompuEvent> {
             event.setTitle(el.select("td:nth-child(4) > table > tbody > tr > td:nth-child(2) > a > font").html());
             event.setWriteDate(el.select("td:nth-child(5)").attr("title"));
 
+            String readCount = StringUtils.hasText(el.select("td:nth-child(4) > table > tbody > tr > td:nth-child(2) > span > span").html()) ? el.select("td:nth-child(4) > table > tbody > tr > td:nth-child(2) > span > span").html() : "0";
+
+            Integer result = 0;
+            try {
+
+                result = Integer.valueOf(readCount);
+            } catch (Exception e) {
+                result = 0;
+            }
+            event.setReadCount(result);
+
+
             if (!StringUtils.hasLength(event.getTitle()) || !StringUtils.hasLength(event.getCategory())) {
                 continue;
             }
@@ -69,6 +81,7 @@ public class PpompuEventParser implements Parser<PpompuEvent> {
             LOG.debug("상세 링크 : " + each.getLink());
             LOG.debug("타이틀 : " + each.getTitle());
             LOG.debug("시각 : " + each.getWriteDate());
+            LOG.debug("조회수 : " + each.getReadCount());
         }
 
         return eventList;

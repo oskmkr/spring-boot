@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by oskm on 2016-03-08.
  */
-public class PpompuEvent implements Serializable {
+public class PpompuEvent implements Serializable, ReadCountFindable, Event {
 
     private static final long serialVersionUID = -4548681402123269922L;
 
@@ -14,6 +14,7 @@ public class PpompuEvent implements Serializable {
     private String title;
     private String link;
     private String writeDate;
+    private Integer readCount;
 
     public String getCategory() {
         return category;
@@ -53,5 +54,13 @@ public class PpompuEvent implements Serializable {
 
     public void setWriteDate(String writeDate) {
         this.writeDate = writeDate;
+    }
+
+    public Integer getReadCount() {
+        return readCount;
+    }
+
+    public void setReadCount(Integer readCount) {
+        this.readCount = readCount;
     }
 }

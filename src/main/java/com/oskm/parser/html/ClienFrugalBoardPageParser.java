@@ -55,8 +55,19 @@ public class ClienFrugalBoardPageParser implements Parser<ClienEvent> {
             event.setLink(el.select("td.post_subject > a").attr("href"));
             event.setTitle(el.select("td.post_subject > a").html());
             event.setWriteDate(el.select("td:nth-child(5) > span").attr("title"));
+            String readCount = StringUtils.hasText(el.select("td:nth-child(6)").html()) ? el.select("td:nth-child(6)").html() : "0";
 
-            if(!StringUtils.hasLength(event.getTitle()) || !StringUtils.hasLength(event.getCategory())) {
+            Integer result = 0;
+            try {
+
+                result = Integer.valueOf(readCount);
+            } catch (Exception e) {
+                result = 0;
+            }
+
+            event.setReadCount(result);
+
+            if (!StringUtils.hasLength(event.getTitle()) || !StringUtils.hasLength(event.getCategory())) {
                 continue;
             }
 
@@ -64,11 +75,12 @@ public class ClienFrugalBoardPageParser implements Parser<ClienEvent> {
             eventList.add(event);
         }
 
-        for(ClienEvent each : eventList) {
+        for (ClienEvent each : eventList) {
             LOG.debug("카테고리 : " + each.getCategory());
             LOG.debug("상세 링크 : " + each.getLink());
             LOG.debug("타이틀 : " + each.getTitle());
             LOG.debug("시각 : " + each.getWriteDate());
+            LOG.debug("조회수 : " + each.getReadCount());
         }
 
         return eventList;

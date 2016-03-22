@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by oskm on 2016-03-03.
  */
-public class ClienEvent implements Serializable {
+public class ClienEvent implements Serializable, ReadCountFindable, Event {
 
     private static final long serialVersionUID = 8599115566008150034L;
 
@@ -13,6 +13,7 @@ public class ClienEvent implements Serializable {
     private String title;
     private String link;
     private String writeDate;
+    private Integer readCount;
 
     public String getCategory() {
         return category;
@@ -44,5 +45,13 @@ public class ClienEvent implements Serializable {
 
     public void setWriteDate(String writeDate) {
         this.writeDate = writeDate;
+    }
+
+    public Integer getReadCount() {
+        return readCount;
+    }
+
+    public void setReadCount(Integer readCount) {
+        this.readCount = readCount;
     }
 }
