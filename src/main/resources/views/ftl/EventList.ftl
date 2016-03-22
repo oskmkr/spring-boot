@@ -376,7 +376,7 @@ FOOTER START
 <#--
 <script src="//code.jquery.com/jquery-latest.min.js"></script>
 -->
-<script src="/webjars/jquery/1.12.1/dist/jquery.min.js"></script>
+<script src="/webjars/jquery/2.2.2/dist/jquery.js"></script>
 <#-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 

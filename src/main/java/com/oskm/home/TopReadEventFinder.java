@@ -3,6 +3,7 @@ package com.oskm.home;
 import com.oskm.parser.ReadCountFindable;
 import org.springframework.util.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -12,20 +13,23 @@ import java.util.List;
  */
 public class TopReadEventFinder<T extends ReadCountFindable> {
 
-    public List<T> find(List<T> eventList) {
+    public List<T> find(final List<T> eventList) {
 
-        if (CollectionUtils.isEmpty(eventList)) {
+        List<T> sortedEventList = new ArrayList<>(eventList);
+        //Collections.copy(sortedEventList, eventList);
+
+        if (CollectionUtils.isEmpty(sortedEventList)) {
             return Collections.emptyList();
         }
 
-        eventList.sort(comparator);
+        sortedEventList.sort(comparator);
 
 
-        if (eventList.size() < 3) {
-            return eventList;
+        if (sortedEventList.size() < 3) {
+            return sortedEventList;
         }
 
-        return eventList.subList(0, 3);
+        return sortedEventList.subList(0, 3);
     }
 
     private Comparator<T> comparator = new Comparator<T>() {
