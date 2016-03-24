@@ -28,14 +28,9 @@ public class EventListController {
     @RequestMapping(value = "/eventList")
     public ModelAndView list(Model model) {
 
-        doctcEventCrawler.analyze();
-        List<DoctcEvent> doctcEventList = doctcEventCrawler.findEvent();
-
-        clienEventCrawler.analyze();
         List<ClienEvent> clienEventList = clienEventCrawler.findEvent();
-
-        ppompuEventCrawler.analyze();
         List<PpompuEvent> ppompuEventList = ppompuEventCrawler.findEvent();
+        List<DoctcEvent> doctcEventList = doctcEventCrawler.findEvent();
 
         /*
         for (DoctcEvent event : eventList) {
