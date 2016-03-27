@@ -76,25 +76,25 @@ GOOGLE FONTS
 </head>
 <body data-spy="scroll">
 <#-- Preloader -->
+<#--
 <div id="preloader">
     <div id="status">
         <div class="loadicon icon-cloud-download wow tada infinite" data-wow-duration="8s"></div>
     </div>
 </div>
-
+-->
 <header>
 <#-- ===========================
 HERO AREA
 =========================== -->
     <div id="hero">
         <div class="container herocontent">
-            <h4>&nbsp;</h4>
-            <h2 class="wow fadeInUp" data-wow-duration="2s">꿀 소식 ( useful events news )</h2>
-            <h4 class="wow fadeInDown" data-wow-duration="3s">다양한 꿀 이벤트 소식을 한눈에.</h4>
+            <h2 class="wow fadeInUp" data-wow-duration="2s">꿀 소식</h2>
+            <h4 class="wow fadeInDown" data-wow-duration="3s">꿀 같은 이벤트 소식을 한눈에</h4>
         </div>
 
     <#-- Featured image on the Hero area -->
-        <img class=" wow bounceInUp" data-wow-duration="4s" src="img/honey_256.png" alt="Featured Work">
+        <img class=" wow bounceInUp" data-wow-duration="4s" src="img/honey_128.png" alt="Featured Work">
     </div><#--HERO AREA END-->
 
 <#-- ===========================
@@ -120,9 +120,9 @@ HERO AREA
 
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right"><#--YOUR NAVIGATION ITEMS STRAT BELOW-->
-                    <li><a href="#clien"><span class="btnicon icon-user"></span>클리앙</a></li>
-                    <li><a href="#ppompu"><span class="btnicon icon-user"></span>뽐뿌</a></li>
-                    <li><a href="#doctc"><span class="btnicon icon-cup"></span>독특닷컴</a></li>
+                    <li><a href="/clien"><span class="btnicon icon-user"></span>클리앙</a></li>
+                    <li><a href="/ppompu"><span class="btnicon icon-user"></span>뽐뿌</a></li>
+                    <li><a href="/doctc"><span class="btnicon icon-cup"></span>독특닷컴</a></li>
                 <#--
                 <li><a href="#portfolio"><span class="btnicon icon-rocket"></span>Portfolio</a></li>
                 <li><a href="#testimonials"><span class="btnicon icon-bubble"></span>Testimonials</a></li>
@@ -149,7 +149,7 @@ TESTIMONIAL SECTION START
 <div id="topReadEvent" class="container">
     <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
         <span class="bigicon icon-bubbles"></span>
-        <h3>Top3 조회수 이벤트</h3>
+        <h3>조회수 Top3 이벤트</h3>
         <h4>가장 조회가 많이 된 이벤트 소식</h4>
         <hr class="separetor">
     </div><#-- TESTIMONIAL SECTIONHEAD END -->
@@ -176,137 +176,6 @@ TESTIMONIAL SECTION START
 
     </div>
 </div>
-
-
-<div id="clien" class="container">
-    <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
-        <span class="bigicon icon-bubbles"></span>
-        <h3>Clien 알뜰 게시판</h3>
-        <h4>최신 알뜰 게시판 소식</h4>
-        <hr class="separetor">
-    </div><#-- TESTIMONIAL SECTIONHEAD END -->
-
-    <div class="row">
-
-    <#list clienEventList as clienEvent>
-
-        <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
-            <a class="black-link" href="${clienEvent.link}">
-                <div class="panel-body latest-item">
-                    <div class="clientsphoto">
-                        <img src="img/honey_128.png" alt="">
-                    </div>
-                    <div class="quote">
-                        <div>${clienEvent.category} ${clienEvent.title}</div>
-                        <h5>${clienEvent.writeDate}</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-    </#list>
-    <#--
-<#list clienEventList as clienEvent>
-    <div class="col-md-4">
-        <div class="bs-component">
-            <div class="well ">
-                <img src="img/honey_48.png" alt="">
-            ${clienEvent.category} ${clienEvent.title}
-            </div>
-            <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
-        </div>
-    </div>
-</#list>
-
-<#list clienEventList as clienEvent>
-    <a class="black-link" href="${clienEvent.link}">
-        <div class="col-md-6 wow zoomIn" data-wow-duration="1s">
-            <div class="clientsphoto">
-                <img src="img/honey_128.png" alt="">
-            </div>
-            <div class="quote">
-                <div>${clienEvent.category} ${clienEvent.title}</div>
-                <div>${clienEvent.writeDate}</div>
-            </div>
-        </div>
-    </a>
-</#list>
--->
-    </div>
-</div>
-
-<div id="ppompu" class="container">
-    <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
-        <span class="bigicon icon-bubbles"></span>
-        <h3>뽐뿌 이벤트 소식</h3>
-        <h4>뽐뿌 최신 이벤트 소식</h4>
-        <hr class="separetor">
-    </div><#-- TESTIMONIAL SECTIONHEAD END -->
-
-<#-- TESTIMONIAL ITEMS START -->
-    <div class="row">
-    <#list ppompuEventList as ppompuEvent>
-        <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
-            <a class="black-link" href="${ppompuEvent.link}">
-                <div class="panel-body">
-                    <div class="clientsphoto">
-                        <img src="img/honey_128.png" alt="">
-                    </div>
-                    <div class="quote">
-                        <div>${ppompuEvent.title}</div>
-                        <h5>${ppompuEvent.writeDate}</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </#list>
-    <#--
-    <#list ppompuEventList as ppompuEvent>
-        <div class="col-md-6 wow zoomIn" data-wow-duration="1s">
-            <a href="${ppompuEvent.link}">
-                <div class="clientsphoto">
-                    <a href="${ppompuEvent.link}"><img src="img/honey_128.png" alt=""></a>
-                </div>
-                <div class="quote">
-                    <div>${ppompuEvent.title}</div>
-                    <h5>${ppompuEvent.writeDate}</h5>
-                </div>
-            </a>
-        </div>
-    </#list>
-        -->
-
-    </div>
-</div><#-- TESTIMONIAL SECTION END -->
-<#--
-<div id="doctc" class="container">
-    <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
-        <span class="bigicon icon-bubbles"></span>
-        <h3>Doctc.com 이벤트 소식</h3>
-        <h4>Doctc.com 최신 이벤트 소식</h4>
-        <hr class="separetor">
-    </div>
-
-
-    <div class="row">
-
-    <#list doctcEventList as doctcEvent>
-        <div class="col-md-6 wow zoomIn" data-wow-duration="1s">
-            <a href="${doctcEvent.link}">
-                <div class="clientsphoto">
-                    <a href="${doctcEvent.link}"><img src="${doctcEvent.mainImage}" alt=""></a>
-                </div>
-                <div class="quote">
-                    <div>${doctcEvent.title}</div>
-                    <h5>${doctcEvent.duration}</h5>
-                </div>
-            </a>
-        </div>
-    </#list>
-
-    </div>
-</div>
--->
 
 <div id="portfolio">
     <div class="sectionhead wow bounceInUp" data-wow-duration="2s">

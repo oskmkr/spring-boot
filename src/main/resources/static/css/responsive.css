@@ -54,7 +54,7 @@
 
     
     /*Hero area*/
-    #hero{height: 400px;}    
+    #hero{height: 400px;}
     .herocontent{padding-top: 30px;}
     
     /*About section*/
@@ -69,14 +69,14 @@
 
 /* Smaller Mobile Devices */
 @media only screen and (max-width : 480px) {
-    #hero{height: 400px;}
+    #hero{height: 260px;}
     #clients {display: none;}
     .footersocial li{font-size: 1.5em}
 }
 
 /* Smallest Mobile Devices */
 @media only screen and (max-width : 320px) {
-    #hero{height: 480px;}
+    #hero{height: 260px;}
     .herocontent{padding-top: 100px; padding-bottom: 30px;}
 
 }

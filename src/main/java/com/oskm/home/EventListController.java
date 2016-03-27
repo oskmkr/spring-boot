@@ -25,37 +25,25 @@ public class EventListController {
 
     private static final Logger LOG = LoggerFactory.getLogger(EventListController.class);
 
-    @RequestMapping(value = "/eventList")
-    public ModelAndView list(Model model) {
+    @RequestMapping(value = "/clien")
+    public ModelAndView clien(Model model) {
 
         List<ClienEvent> clienEventList = clienEventCrawler.findEvent();
-        List<PpompuEvent> ppompuEventList = ppompuEventCrawler.findEvent();
-        List<DoctcEvent> doctcEventList = doctcEventCrawler.findEvent();
 
-        /*
-        for (DoctcEvent event : eventList) {
-            LOG.debug("[event model]" + event);
-            System.out.println("[event model]" + event);
-        }
-        */
-
-        List<ClienEvent> top3ClienEventList = new TopReadEventFinder<ClienEvent>().find(clienEventList);
-        List<PpompuEvent> top3PpompuEventList = new TopReadEventFinder<PpompuEvent>().find(ppompuEventList);
-
-        List<Event> top3EventList = new ArrayList<Event>();
-        top3EventList.addAll(top3ClienEventList);
-        top3EventList.addAll(top3PpompuEventList);
-
-
-        model.addAttribute("top3EventList", top3EventList);
-        model.addAttribute("top3ClienEventList", top3ClienEventList);
-        model.addAttribute("top3PpompuEventList", top3PpompuEventList);
         model.addAttribute("clienEventList", clienEventList);
-        model.addAttribute("ppompuEventList", ppompuEventList);
-        model.addAttribute("doctcEventList", doctcEventList);
 
-        return new ModelAndView("EventList", model.asMap());
+        return new ModelAndView("clien", model.asMap());
     }
+
+    @RequestMapping(value = "/ppompu")
+    public ModelAndView ppompu(Model model) {
+
+        List<PpompuEvent> ppompuEventList = ppompuEventCrawler.findEvent();
+        model.addAttribute("ppompuEventList", ppompuEventList);
+
+        return new ModelAndView("ppompu", model.asMap());
+    }
+
 
     @Autowired
     @Qualifier("doctcEventCrawler")

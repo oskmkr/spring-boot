@@ -4,7 +4,6 @@
 
 $(function () {
 
-
     // SOME VARIABLES
     var button = '.dribbble-follow-button',
         label = $(button).text(),
@@ -13,8 +12,6 @@ $(function () {
     // DISPLAYED WHEN THE API IS NOT RESPONDING
     $(button).wrap('<div class="dribbble-follow-button" />').removeClass().addClass('label').html('<i></i> ' + label);
 
-
-
 });
 
 
@@ -22,8 +19,6 @@ $(function () {
 //PRELOADER
 //========================
 $(window).load(function () { // makes sure the whole site is loaded
-    $('#status').fadeOut(); // will first fade out the loading animation
-    $('#preloader').delay(200).fadeOut('fast');
     // will fade out the white DIV that covers the website.
     $('body').delay(200).css({'overflow': 'visible'});
 })
@@ -42,6 +37,7 @@ $("html").niceScroll({
 //========================
 //SMOOTHSCROLL
 //========================
+/*
 $(function () {
     $('a[href*=#]:not([href=#])').click(function () {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -56,7 +52,7 @@ $(function () {
         }
     });
 });
-
+*/
 
 //========================
 //NAVBAR

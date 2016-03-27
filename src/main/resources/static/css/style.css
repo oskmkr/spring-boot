@@ -10,7 +10,7 @@ TYPOGRAPHY
 ================================*/
 body {
     font-family: '나눔고딕',NanumGothic,'돋움',Dotum,'굴림',Gulim,Helvetica,sans-serif!important;
-    line-height: 1.8em;
+    line-height: 1.6em;
 }
 
 .bigicon {font-size: 3em;}
@@ -83,7 +83,7 @@ HERO AREA
 }
 
 .herocontent{
-    padding-top: 100px;
+    padding-top: 1px;
     width: 100%;
     max-width: 900px;
 }
@@ -195,11 +195,18 @@ TESTIMONIAL SECTION
     width: 80px;
     float: left;
     margin-right: 20px;
-    border-radius: 50%;
+    border-radius: 0%;
 }
 
 .clientsphoto img:hover{
     border-radius: 15%;
+}
+
+.clientsphoto span{
+    width: 80px;
+    float: left;
+    margin-right: 20px;
+    border-radius: 0%;
 }
 
 blockquote{
