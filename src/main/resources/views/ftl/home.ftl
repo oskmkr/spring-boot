@@ -143,39 +143,141 @@ HERO AREA
 <#-- ===========================
 TESTIMONIAL SECTION START
 =========================== -->
-
-
-
-<div id="topReadEvent" class="container">
-    <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
-        <span class="bigicon icon-bubbles"></span>
-        <h3>조회수 Top3 이벤트</h3>
-        <h4>가장 조회가 많이 된 이벤트 소식</h4>
-        <hr class="separetor">
-    </div><#-- TESTIMONIAL SECTIONHEAD END -->
-
+<div class="container">
     <div class="row">
+        <ul class="nav nav-tabs" style="margin-bottom: 15px;">
+            <li class=""><a href="#home" data-toggle="tab" aria-expanded="false">홈
+                <div class="ripple-container"></div>
+            </a></li>
+            <li class=""><a href="#latestClien" data-toggle="tab" aria-expanded="false">hot 클리앙
+                <div class="ripple-container"></div>
+            </a></li>
+            <li class=""><a href="#latestPpompu" data-toggle="tab" aria-expanded="false">hot 뽐뿌
+                <div class="ripple-container"></div>
+            </a></li>
+        <#--
+        <li class="active"><a href="#profile" data-toggle="tab" aria-expanded="true">Profile<div class="ripple-container"></div></a></li>
+        <li class="disabled"><a>Disabled<div class="ripple-container"></div></a></li>
+        -->
+        <#--
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="bootstrap-elements.html" data-target="#" aria-expanded="false">
+                최신 <span class="caret"></span>
+                <div class="ripple-container"></div></a>
+            <ul class="dropdown-menu">
+                <li><a href="#latestClien" data-toggle="tab">Clien 최신</a></li>
+                <li class="divider"></li>
+                <li><a href="#latestPpompu" data-toggle="tab">PPompu 최신</a></li>
+            </ul>
+        </li>
+        -->
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+        <#--
+        <h2 id="nav-tabs">Tabs</h2>
+        -->
+            <div class="bs-component">
 
-    <#list top3EventList as event>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade" id="home">
+                        <div id="topReadEvent" class="container">
+                            <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
+                                <span class="bigicon icon-bubbles"></span>
+                                <h3>주목 이벤트</h3>
+                                <h5>지금 가장 주목 받고 있는 이벤트</h5>
+                                <hr class="separetor">
+                            </div><#-- TESTIMONIAL SECTIONHEAD END -->
 
-        <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
-            <a class="black-link" href="${event.link}">
-                <div class="panel-body latest-item">
-                    <div class="clientsphoto">
-                        <img src="img/honey_128.png" alt="">
+                            <div class="row">
+                            <#list top3EventList as event>
+
+                                <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
+                                    <a class="black-link" href="${event.link}">
+                                        <div class="panel-body latest-item">
+                                            <div class="clientsphoto">
+                                                <img src="img/honey_128.png" alt="">
+                                            </div>
+                                            <div class="quote">
+                                                <div>${event.category} ${event.title}</div>
+                                                <h5>${event.writeDate}</h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </#list>
+                            </div>
+                        </div>
                     </div>
-                    <div class="quote">
-                        <div>${event.category} ${event.title}</div>
-                        <h5>${event.writeDate}</h5>
+
+                    <div class="tab-pane fade active in" id="latestClien">
+                        <div id="topReadEvent" class="container">
+                            <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
+                                <span class="bigicon icon-bubbles"></span>
+                                <h3>클리앙 최신 이벤트</h3>
+                                <h4>가장 조회가 많이 된 이벤트 소식</h4>
+                                <hr class="separetor">
+                            </div><#-- TESTIMONIAL SECTIONHEAD END -->
+
+                            <div class="row">
+                            <#list latestClienEventList as event>
+                                <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
+                                    <a class="black-link" href="${event.link}">
+                                        <div class="panel-body latest-item">
+                                            <div class="clientsphoto">
+                                                <img src="img/honey_128.png" alt="">
+                                            </div>
+                                            <div class="quote">
+                                                <div>${event.category} ${event.title}</div>
+                                                <h5>${event.writeDate}</h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </#list>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="latestPpompu">
+                        <div class="tab-pane fade active in" id="latestClien">
+                            <div id="topReadEvent" class="container">
+                                <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
+                                    <span class="bigicon icon-bubbles"></span>
+                                    <h3>뽐뿌 최신 이벤트</h3>
+                                    <h4>가장 조회가 많이 된 이벤트 소식</h4>
+                                    <hr class="separetor">
+                                </div><#-- TESTIMONIAL SECTIONHEAD END -->
+
+                                <div class="row">
+                                <#list latestPpompuEventList as event>
+                                    <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
+                                        <a class="black-link" href="${event.link}">
+                                            <div class="panel-body latest-item">
+                                                <div class="clientsphoto">
+                                                    <img src="img/honey_128.png" alt="">
+                                                </div>
+                                                <div class="quote">
+                                                    <div>${event.category} ${event.title}</div>
+                                                    <h5>${event.writeDate}</h5>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </#list>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </a>
+                <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+            </div>
         </div>
-
-    </#list>
-
     </div>
 </div>
+</div>
+
 
 <div id="portfolio">
     <div class="sectionhead wow bounceInUp" data-wow-duration="2s">

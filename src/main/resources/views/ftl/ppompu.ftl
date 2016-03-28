@@ -78,12 +78,12 @@ GOOGLE FONTS
 <div id="ppompu" class="container">
     <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
         <span class="bigicon icon-bubbles"></span>
-        <h3>뽐뿌 이벤트 소식</h3>
-        <h4>뽐뿌 최신 이벤트 소식</h4>
+        <h3>뽐뿌 게시판</h3>
+        <h4>최신 뽐뿌 게시판</h4>
         <hr class="separetor">
     </div>
 
-    <div class="row">
+    <div class="row col-md-4">
     <#list ppompuEventList as ppompuEvent>
         <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
             <a class="black-link" href="${ppompuEvent.link}">

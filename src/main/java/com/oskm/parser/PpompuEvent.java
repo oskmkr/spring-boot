@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by oskm on 2016-03-08.
  */
-public class PpompuEvent implements Serializable, ReadCountFindable, Event {
+public class PpompuEvent implements Serializable, ReadCountFindable, WriteDateFindable, Event {
 
     private static final long serialVersionUID = -4548681402123269922L;
 

@@ -85,11 +85,11 @@ TESTIMONIAL SECTION START
     <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
         <span class="bigicon icon-bubbles"></span>
         <h3>Clien 알뜰 게시판</h3>
-        <h4>최신 알뜰 게시판 소식</h4>
+        <h5>최신 클리앙 알뜰 게시판</h5>
         <hr class="separetor">
     </div><#-- TESTIMONIAL SECTIONHEAD END -->
 
-    <div class="row">
+    <div class="row col-md-4">
 
     <#list clienEventList as clienEvent>
 

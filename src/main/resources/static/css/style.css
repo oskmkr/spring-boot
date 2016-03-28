@@ -331,3 +331,7 @@ a.black-link:hover{color: #ea9312; text-decoration: none;}
 .panel-body.highlight-item {
     background-color:beige;
 }
+
+.nav-tabs {
+    background:#F48550;
+}

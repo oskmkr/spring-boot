@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -24,48 +25,46 @@ import java.util.List;
 public class HomeController {
 
     private static final Logger LOG = LoggerFactory.getLogger(HomeController.class);
-    @Autowired
-    private DoctcEventCrawler eventCrawler;
 
     @RequestMapping(value = "/{app}")
     public ModelAndView loadHomePage(Model model) {
         List<ClienEvent> clienEventList = clienEventCrawler.findEvent();
         List<PpompuEvent> ppompuEventList = ppompuEventCrawler.findEvent();
 
-        /*
-        for (DoctcEvent event : eventList) {
-            LOG.debug("[event model]" + event);
-            System.out.println("[event model]" + event);
-        }
-        */
-
         List<ClienEvent> top3ClienEventList = new TopReadEventFinder<ClienEvent>().find(clienEventList);
         List<PpompuEvent> top3PpompuEventList = new TopReadEventFinder<PpompuEvent>().find(ppompuEventList);
 
         List<Event> top3EventList = new ArrayList<Event>();
+
         top3EventList.addAll(top3ClienEventList);
         top3EventList.addAll(top3PpompuEventList);
 
+        top3EventList.sort(new Comparator<Event>() {
+            @Override
+            public int compare(Event o1, Event o2) {
+                if (o1.getReadCount() < o2.getReadCount()) {
+                    return 1;
+                }
+
+                if (o1.getReadCount() > o2.getReadCount()) {
+                    return -1;
+                }
+
+                return 0;
+            }
+        });
+
+        List<ClienEvent> latestClienEventList = latestClienEventFinder.find(clienEventList);
+        List<PpompuEvent> latestPpompuEventList = latestPpompuEventFinder.find(ppompuEventList);
 
         model.addAttribute("top3EventList", top3EventList);
-        model.addAttribute("top3ClienEventList", top3ClienEventList);
+        model.addAttribute("latestClienEventList", latestClienEventList);
+        model.addAttribute("latestPpompuEventList", latestPpompuEventList);
 
         return new ModelAndView("home", model.asMap());
     }
 
-    @RequestMapping(value = "/crawler")
-    public String crawler(Model model) {
 
-        eventCrawler.analyze();
-        List<DoctcEvent> eventList = eventCrawler.findEvent();
-
-        for (DoctcEvent event : eventList) {
-            LOG.debug("[event model]" + event);
-            System.out.println("[event model]" + event);
-        }
-
-        return "crawler";
-    }
 
     @Autowired
     @Qualifier("doctcEventCrawler")
@@ -78,4 +77,9 @@ public class HomeController {
     @Autowired
     @Qualifier("ppompuEventCrawler")
     private EventCrawler ppompuEventCrawler;
+
+    @Autowired
+    private LatestEventFinder<ClienEvent> latestClienEventFinder;
+    @Autowired
+    private LatestEventFinder<PpompuEvent> latestPpompuEventFinder;
 }
