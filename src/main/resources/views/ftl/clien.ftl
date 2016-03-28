@@ -108,33 +108,33 @@ TESTIMONIAL SECTION START
         </div>
 
     </#list>
-       <#--
-   <#list clienEventList as clienEvent>
-       <div class="col-md-4">
-           <div class="bs-component">
-               <div class="well ">
-                   <img src="img/honey_48.png" alt="">
-               ${clienEvent.category} ${clienEvent.title}
-               </div>
-               <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
-           </div>
-       </div>
-   </#list>
+    <#--
+<#list clienEventList as clienEvent>
+    <div class="col-md-4">
+        <div class="bs-component">
+            <div class="well ">
+                <img src="img/honey_48.png" alt="">
+            ${clienEvent.category} ${clienEvent.title}
+            </div>
+            <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+        </div>
+    </div>
+</#list>
 
-   <#list clienEventList as clienEvent>
-       <a class="black-link" href="${clienEvent.link}">
-           <div class="col-md-6 wow zoomIn" data-wow-duration="1s">
-               <div class="clientsphoto">
-                   <img src="img/honey_128.png" alt="">
-               </div>
-               <div class="quote">
-                   <div>${clienEvent.category} ${clienEvent.title}</div>
-                   <div>${clienEvent.writeDate}</div>
-               </div>
-           </div>
-       </a>
-   </#list>
-   -->
+<#list clienEventList as clienEvent>
+    <a class="black-link" href="${clienEvent.link}">
+        <div class="col-md-6 wow zoomIn" data-wow-duration="1s">
+            <div class="clientsphoto">
+                <img src="img/honey_128.png" alt="">
+            </div>
+            <div class="quote">
+                <div>${clienEvent.category} ${clienEvent.title}</div>
+                <div>${clienEvent.writeDate}</div>
+            </div>
+        </div>
+    </a>
+</#list>
+-->
     </div>
 </div>
 
@@ -168,53 +168,24 @@ TESTIMONIAL SECTION START
 </div>
 -->
 
-<div id="portfolio">
-    <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
-        <span class="bigicon icon-rocket"></span>
-        <h3>A few recent works</h3>
-        <hr class="separetor">
-    </div><#-- PORTFOLIO SECTION HEAD END -->
-
-<#-- PORTFOLIO ITEMS START -->
-    <div class="portfolioitems container">
-        <ul>
-            <div id="shotsByPlayerId">
-                <img src="http://www.ppomppu.co.kr/images/main/201111/logo_small.gif">
-            </div>
-        </ul><#--REFER TO THE js/drifolio.js-->
-    </div><#-- PORTFOLIO ITEMS END -->
-
-<#--Replace the URL below with your dribbble profile URL-->
-<#--
-<a class="btn btn-default wow fadeInUp" href="#" role="button">
-    <span class="btnicon icon-social-dribbble"></span>
-    <span class="button_text">View all items</span>
-</a>
--->
-</div><#-- PORTFOLIO SECTION END -->
-
 <#-- ===========================
 FOOTER START
 =========================== -->
 <footer>
     <div class="container">
-        <span class="bigicon icon-speedometer "></span>
-
-        <div class="footerlinks"><#-- FOOTER LINKS START -->
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#clien">클리앙</a></li>
-                <li><a href="#ppompu">뽐뿌</a></li>
-                <li><a href="#doctc">독특닷컴</a></li>
-            <#--
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            -->
-            <#--replace the email address below with your email address-->
-                <li><a href="mailto:oskmkr@naver.com">Contact</a></li>
-            </ul>
-        </div><#-- FOOTER LINKS END -->
-
+        <span class="bigicon icon-like"></span>
+        <div class="footerlinks"></div>
+    <#--
+    <div class="footerlinks">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#clien">클리앙</a></li>
+            <li><a href="#ppompu">뽐뿌</a></li>
+            <li><a href="#doctc">독특닷컴</a></li>
+            <li><a href="mailto:oskmkr@naver.com">Contact</a></li>
+        </ul>
+    </div>
+    -->
         <div class="copyright"><#-- FOOTER COPYRIGHT START -->
             <p>Copyrightⓒ. 2016 oskmkr All Rights Reserved.</p>
         </div><#-- FOOTER COPYRIGHT END -->

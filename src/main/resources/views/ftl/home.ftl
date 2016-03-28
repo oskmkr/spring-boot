@@ -146,7 +146,7 @@ TESTIMONIAL SECTION START
 <div class="container">
     <div class="row">
         <ul class="nav nav-tabs" style="margin-bottom: 15px;">
-            <li class=""><a href="#home" data-toggle="tab" aria-expanded="false">홈
+            <li class="active"><a href="#home" data-toggle="tab" aria-expanded="false">홈
                 <div class="ripple-container"></div>
             </a></li>
             <li class=""><a href="#latestClien" data-toggle="tab" aria-expanded="false">hot 클리앙
@@ -192,7 +192,6 @@ TESTIMONIAL SECTION START
 
                             <div class="row">
                             <#list top3EventList as event>
-
                                 <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
                                     <a class="black-link" href="${event.link}">
                                         <div class="panel-body latest-item">
@@ -236,6 +235,7 @@ TESTIMONIAL SECTION START
                                     </a>
                                 </div>
                             </#list>
+                                <a href="/clien" class="btn btn-default btn-lg btn-block btn-raised">전체 보기</a>
                             </div>
                         </div>
                     </div>
@@ -266,6 +266,7 @@ TESTIMONIAL SECTION START
                                         </a>
                                     </div>
                                 </#list>
+                                    <a href="/ppompu" class="btn btn-default btn-lg btn-block btn-raised">전체 보기</a>
                                 </div>
                             </div>
                         </div>
@@ -290,11 +291,13 @@ TESTIMONIAL SECTION START
     <div class="portfolioitems container">
         <ul>
             <div id="shotsByPlayerId">
-                <img src="http://www.ppomppu.co.kr/images/main/201111/logo_small.gif">
+            <#--
+            <img src="http://www.ppomppu.co.kr/images/main/201111/logo_small.gif">
+            -->
+                <h4>추가되었으면 하는 곳을 알려주세요.</h4>
             </div>
         </ul><#--REFER TO THE js/drifolio.js-->
     </div><#-- PORTFOLIO ITEMS END -->
-
 <#--Replace the URL below with your dribbble profile URL-->
 <#--
 <a class="btn btn-default wow fadeInUp" href="#" role="button">
@@ -309,23 +312,19 @@ FOOTER START
 =========================== -->
 <footer>
     <div class="container">
-        <span class="bigicon icon-speedometer "></span>
-
-        <div class="footerlinks"><#-- FOOTER LINKS START -->
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#clien">클리앙</a></li>
-                <li><a href="#ppompu">뽐뿌</a></li>
-                <li><a href="#doctc">독특닷컴</a></li>
-            <#--
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            -->
-            <#--replace the email address below with your email address-->
-                <li><a href="mailto:oskmkr@naver.com">Contact</a></li>
-            </ul>
-        </div><#-- FOOTER LINKS END -->
-
+        <span class="bigicon icon-like"></span>
+        <div class="footerlinks"></div>
+    <#--
+    <div class="footerlinks">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#clien">클리앙</a></li>
+            <li><a href="#ppompu">뽐뿌</a></li>
+            <li><a href="#doctc">독특닷컴</a></li>
+            <li><a href="mailto:oskmkr@naver.com">Contact</a></li>
+        </ul>
+    </div>
+    -->
         <div class="copyright"><#-- FOOTER COPYRIGHT START -->
             <p>Copyrightⓒ. 2016 oskmkr All Rights Reserved.</p>
         </div><#-- FOOTER COPYRIGHT END -->
@@ -342,7 +341,6 @@ FOOTER START
     -->
     </div>
 </footer><#-- FOOTER END -->
-
 <#-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <#--
 <script src="//code.jquery.com/jquery-latest.min.js"></script>
