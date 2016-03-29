@@ -181,7 +181,7 @@ TESTIMONIAL SECTION START
             <div class="bs-component">
 
                 <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane fade" id="home">
+                    <div class="tab-pane fade active in" id="home">
                         <div id="topReadEvent" class="container">
                             <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
                                 <span class="bigicon icon-bubbles"></span>
@@ -210,7 +210,7 @@ TESTIMONIAL SECTION START
                         </div>
                     </div>
 
-                    <div class="tab-pane fade active in" id="latestClien">
+                    <div class="tab-pane fade in" id="latestClien">
                         <div id="topReadEvent" class="container">
                             <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
                                 <span class="bigicon icon-bubbles"></span>
@@ -240,34 +240,32 @@ TESTIMONIAL SECTION START
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="latestPpompu">
-                        <div class="tab-pane fade active in" id="latestClien">
-                            <div id="topReadEvent" class="container">
-                                <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
-                                    <span class="bigicon icon-bubbles"></span>
-                                    <h3>뽐뿌 최신 이벤트</h3>
-                                    <h4>가장 조회가 많이 된 이벤트 소식</h4>
-                                    <hr class="separetor">
-                                </div><#-- TESTIMONIAL SECTIONHEAD END -->
+                    <div class="tab-pane fade in" id="latestPpompu">
+                        <div id="topReadEvent" class="container">
+                            <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
+                                <span class="bigicon icon-bubbles"></span>
+                                <h3>뽐뿌 최신 이벤트</h3>
+                                <h4>가장 조회가 많이 된 이벤트 소식</h4>
+                                <hr class="separetor">
+                            </div><#-- TESTIMONIAL SECTIONHEAD END -->
 
-                                <div class="row">
-                                <#list latestPpompuEventList as event>
-                                    <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
-                                        <a class="black-link" href="${event.link}">
-                                            <div class="panel-body latest-item">
-                                                <div class="clientsphoto">
-                                                    <img src="img/honey_128.png" alt="">
-                                                </div>
-                                                <div class="quote">
-                                                    <div>${event.category} ${event.title}</div>
-                                                    <h5>${event.writeDate}</h5>
-                                                </div>
+                            <div class="row">
+                            <#list latestPpompuEventList as event>
+                                <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
+                                    <a class="black-link" href="${event.link}">
+                                        <div class="panel-body latest-item">
+                                            <div class="clientsphoto">
+                                                <img src="img/honey_128.png" alt="">
                                             </div>
-                                        </a>
-                                    </div>
-                                </#list>
-                                    <a href="/ppompu" class="btn btn-default btn-lg btn-block btn-raised">전체 보기</a>
+                                            <div class="quote">
+                                                <div>${event.category} ${event.title}</div>
+                                                <h5>${event.writeDate}</h5>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
+                            </#list>
+                                <a href="/ppompu" class="btn btn-default btn-lg btn-block btn-raised">전체 보기</a>
                             </div>
                         </div>
                     </div>

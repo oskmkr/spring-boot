@@ -18,7 +18,7 @@ public class LatestEventFinder<T extends Event> {
             return sortedEventList;
         }
 
-        return sortedEventList.subList(0, 3);
+        return sortedEventList.subList(0, 5);
     }
 
 }
