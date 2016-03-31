@@ -26,7 +26,7 @@ public class HomeController {
 
     private static final Logger LOG = LoggerFactory.getLogger(HomeController.class);
 
-    @RequestMapping(value = "/{app}")
+    @RequestMapping(value = "/")
     public ModelAndView loadHomePage(Model model) {
         List<ClienEvent> clienEventList = clienEventCrawler.findEvent();
         List<PpompuEvent> ppompuEventList = ppompuEventCrawler.findEvent();
