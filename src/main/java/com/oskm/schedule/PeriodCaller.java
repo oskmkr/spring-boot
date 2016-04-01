@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -21,9 +22,16 @@ public class PeriodCaller implements InitializingBean {
     /**
      * 10분 마다 실행
      */
-    @Scheduled(cron = "* */10 * * * *")
+    @Scheduled(cron = "0 0/10 0-23 * * *")
     public void analyze() {
+        LOG.debug("#serverPort" + serverPort);
+
+        if (serverPort != 8080) {
+            return;
+        }
+
         LOG.info("[analyzing start time] : " + dateFormat.format(new Date()));
+
 
         clienEventCrawler.analyze();
         ppompuEventCrawler.analyze();
@@ -31,10 +39,14 @@ public class PeriodCaller implements InitializingBean {
         LOG.info("[analyzing end time] : " + dateFormat.format(new Date()));
     }
 
+
     @Override
     public void afterPropertiesSet() throws Exception {
         this.analyze();
     }
+
+    @Value("${server.port}")
+    private int serverPort;
 
     @Autowired
     @Qualifier("doctcEventCrawler")
