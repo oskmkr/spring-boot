@@ -4,26 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<#-- ===========================
-THEME INFO
-=========================== -->
-    <meta name="description"
-          content="A free Bootstrap powerd HTML template exclusively crafted for the super lazy designers like me who designed thousand of websites till today but never got a chance to build one himself.">
-    <meta name="keywords"
-          content="Free Portfolio Template, Free Template, Free Bootstrap Template, Dribbble Portfolio Template, Free HTML5 Template">
-    <meta name="author" content="EvenFly Team">
-
-<#-- DEVEOPER'S NOTE:
-This is a free Bootstrap powered HTML template from EvenFly. Feel free to download, modify and use it for yourself or your clients as long there is no money involved.
-
-Please don't try to sale it from anywhere; because I want it to be free, forever. If you sale it, That's me who deserves the money, not you :)
--->
-
-<#-- ===========================
-SITE TITLE
-=========================== -->
-    <title>꿀 소식</title><#-- This is what you see on your browser tab-->
+    <title>꿀 소식</title>
 
 <#-- ===========================
 FAVICONS
@@ -53,10 +34,6 @@ ICONS:
 =========================== -->
     <link rel="stylesheet" href="css/simple-line-icons.css">
 
-<#-- ===========================
-GOOGLE FONTS
-=========================== -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Antic|Raleway:300">
 
 <#-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <#-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -97,47 +74,10 @@ HERO AREA
         <img class=" wow bounceInUp" data-wow-duration="4s" src="img/honey_128.png" alt="Featured Work">
     </div><#--HERO AREA END-->
 
-<#-- ===========================
- NAVBAR START
- =========================== -->
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container">
+    <#--
+    <#include "./navbar.ftl">
+    -->
 
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <a class="navbar-brand" href="#hero">
-                <#-- Replace Drifolio Bootstrap with your Site Name and remove icon-grid to remove the placeholder icon -->
-                    <span class="brandicon icon-grid"></span>
-                    <span class="brandname">꿀 소식</span>
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right"><#--YOUR NAVIGATION ITEMS STRAT BELOW-->
-                    <li><a href="/clien"><span class="btnicon icon-user"></span>클리앙</a></li>
-                    <li><a href="/ppompu"><span class="btnicon icon-user"></span>뽐뿌</a></li>
-                    <li><a href="/doctc"><span class="btnicon icon-cup"></span>독특닷컴</a></li>
-                <#--
-                <li><a href="#portfolio"><span class="btnicon icon-rocket"></span>Portfolio</a></li>
-                <li><a href="#testimonials"><span class="btnicon icon-bubble"></span>Testimonials</a></li>
-                -->
-                <#--don't forget to replace my email address below with yours-->
-                    <li><a href="mailto:oskmkr@naver.com"><span class="btnicon icon-envelope-open"></span>Contact</a>
-                    </li>
-                <#--
-                <li class="active"><a href=""><span class="btnicon icon-cloud-download"></span>Download CV</a></li>
-                -->
-                </ul>
-
-            </div><#--.nav-collapse -->
-        </div>
-    </nav><#--navbar end-->
 </header><#--header end-->
 <#-- SECTION SEPARETOR LINE -->
 <#-- ===========================

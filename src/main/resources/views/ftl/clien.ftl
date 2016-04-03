@@ -108,65 +108,10 @@ TESTIMONIAL SECTION START
         </div>
 
     </#list>
-    <#--
-<#list clienEventList as clienEvent>
-    <div class="col-md-4">
-        <div class="bs-component">
-            <div class="well ">
-                <img src="img/honey_48.png" alt="">
-            ${clienEvent.category} ${clienEvent.title}
-            </div>
-            <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
-        </div>
-    </div>
-</#list>
-
-<#list clienEventList as clienEvent>
-    <a class="black-link" href="${clienEvent.link}">
-        <div class="col-md-6 wow zoomIn" data-wow-duration="1s">
-            <div class="clientsphoto">
-                <img src="img/honey_128.png" alt="">
-            </div>
-            <div class="quote">
-                <div>${clienEvent.category} ${clienEvent.title}</div>
-                <div>${clienEvent.writeDate}</div>
-            </div>
-        </div>
-    </a>
-</#list>
--->
-    </div>
-</div>
-
-<#--
-<div id="doctc" class="container">
-    <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
-        <span class="bigicon icon-bubbles"></span>
-        <h3>Doctc.com 이벤트 소식</h3>
-        <h4>Doctc.com 최신 이벤트 소식</h4>
-        <hr class="separetor">
-    </div>
-
-
-    <div class="row">
-
-    <#list doctcEventList as doctcEvent>
-        <div class="col-md-6 wow zoomIn" data-wow-duration="1s">
-            <a href="${doctcEvent.link}">
-                <div class="clientsphoto">
-                    <a href="${doctcEvent.link}"><img src="${doctcEvent.mainImage}" alt=""></a>
-                </div>
-                <div class="quote">
-                    <div>${doctcEvent.title}</div>
-                    <h5>${doctcEvent.duration}</h5>
-                </div>
-            </a>
-        </div>
-    </#list>
 
     </div>
 </div>
--->
+
 
 <#-- ===========================
 FOOTER START
@@ -175,31 +120,11 @@ FOOTER START
     <div class="container">
         <span class="bigicon icon-like"></span>
         <div class="footerlinks"></div>
-    <#--
-    <div class="footerlinks">
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#clien">클리앙</a></li>
-            <li><a href="#ppompu">뽐뿌</a></li>
-            <li><a href="#doctc">독특닷컴</a></li>
-            <li><a href="mailto:oskmkr@naver.com">Contact</a></li>
-        </ul>
-    </div>
-    -->
+
         <div class="copyright"><#-- FOOTER COPYRIGHT START -->
             <p>Copyrightⓒ. 2016 oskmkr All Rights Reserved.</p>
         </div><#-- FOOTER COPYRIGHT END -->
-    <#--
-    <div class="footersocial wow fadeInUp" data-wow-duration="3s"><#-- FOOTER SOCIAL ICONS START --#>
-        <ul>
-            <li><a href="http://facebook.com/MamunSrizon"><span class="icon-social-facebook"></span></a></li>
-            <li><a href="http://twitter.com/MamunSrizon"><span class="icon-social-twitter"></span></a></li>
-            <li><a href="#"><span class="icon-social-youtube"></span></a></li>
-            <li><a href="http://dribbble.com/srizon"><span class="icon-social-dribbble"></span></a></li>
-            <li><a href="#"><span class="icon-social-tumblr"></span></a></li>
-        </ul>
-    </div><#-- FOOTER SOCIAL ICONS END --#>
-    -->
+
     </div>
 </footer><#-- FOOTER END -->
 
