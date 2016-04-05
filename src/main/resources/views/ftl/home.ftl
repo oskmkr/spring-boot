@@ -56,7 +56,7 @@ ICONS:
 <#--
 <div id="preloader">
     <div id="status">
-        <div class="loadicon icon-cloud-download wow tada infinite" style="-webkit-animation-duration:8s"></div>
+        <div class="loadicon icon-cloud-download wow tada infinite" data-wow-duration="8s"></div>
     </div>
 </div>
 -->
@@ -66,12 +66,12 @@ HERO AREA
 =========================== -->
     <div id="hero">
         <div class="container herocontent">
-            <h2 class="animated fadeInUp" style="-webkit-animation-duration:2s">꿀 소식</h2>
-            <h4 class="animated fadeInDown" style="-webkit-animation-duration:3s">꿀 같은 이벤트 소식을 한눈에</h4>
+            <h2 class="wow fadeInUp" data-wow-duration="2s">꿀 소식</h2>
+            <h4 class="wow fadeInDown" data-wow-duration="3s">꿀 같은 이벤트 소식을 한눈에</h4>
         </div>
 
     <#-- Featured image on the Hero area -->
-        <img class=" animated bounceInUp" style="-webkit-animation-duration:4s" src="img/honey_128.png" alt="Featured Work">
+        <img class=" wow bounceInUp" data-wow-duration="4s" src="img/honey_128.png" alt="Featured Work">
     </div><#--HERO AREA END-->
 
     <#--
@@ -123,7 +123,7 @@ TESTIMONIAL SECTION START
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade active in" id="home">
                         <div id="topReadEvent" class="container">
-                            <div class="sectionhead animated bounceInUp" style="-webkit-animation-duration:2s">
+                            <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
                                 <span class="bigicon icon-bubbles"></span>
                                 <h3>주목 이벤트</h3>
                                 <h5>지금 가장 주목 받고 있는 이벤트</h5>
@@ -132,7 +132,7 @@ TESTIMONIAL SECTION START
 
                             <div class="row">
                             <#list top3EventList as event>
-                                <div class="panel panel-default animated zoomIn" style="-webkit-animation-duration:1s">
+                                <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
                                     <a class="black-link" href="${event.link}">
                                         <div class="panel-body latest-item">
                                             <div class="clientsphoto">
@@ -152,7 +152,7 @@ TESTIMONIAL SECTION START
 
                     <div class="tab-pane fade in" id="latestClien">
                         <div id="topReadEvent" class="container">
-                            <div class="sectionhead animated bounceInUp" style="-webkit-animation-duration:2s">
+                            <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
                                 <span class="bigicon icon-bubbles"></span>
                                 <h3>클리앙 최신 이벤트</h3>
                                 <h4>가장 조회가 많이 된 이벤트 소식</h4>
@@ -161,7 +161,7 @@ TESTIMONIAL SECTION START
 
                             <div class="row">
                             <#list latestClienEventList as event>
-                                <div class="panel panel-default animated zoomIn" style="-webkit-animation-duration:1s">
+                                <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
                                     <a class="black-link" href="${event.link}">
                                         <div class="panel-body latest-item">
                                             <div class="clientsphoto">
@@ -182,7 +182,7 @@ TESTIMONIAL SECTION START
 
                     <div class="tab-pane fade in" id="latestPpompu">
                         <div id="topReadEvent" class="container">
-                            <div class="sectionhead animated bounceInUp" style="-webkit-animation-duration:2s">
+                            <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
                                 <span class="bigicon icon-bubbles"></span>
                                 <h3>뽐뿌 최신 이벤트</h3>
                                 <h4>가장 조회가 많이 된 이벤트 소식</h4>
@@ -191,7 +191,7 @@ TESTIMONIAL SECTION START
 
                             <div class="row">
                             <#list latestPpompuEventList as event>
-                                <div class="panel panel-default animated zoomIn" style="-webkit-animation-duration:1s">
+                                <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
                                     <a class="black-link" href="${event.link}">
                                         <div class="panel-body latest-item">
                                             <div class="clientsphoto">
@@ -219,7 +219,7 @@ TESTIMONIAL SECTION START
 
 
 <div id="portfolio">
-    <div class="sectionhead animated bounceInUp" style="-webkit-animation-duration:2s">
+    <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
         <span class="bigicon icon-rocket"></span>
         <h3>A few recent works</h3>
         <hr class="separetor">
@@ -238,7 +238,7 @@ TESTIMONIAL SECTION START
     </div><#-- PORTFOLIO ITEMS END -->
 <#--Replace the URL below with your dribbble profile URL-->
 <#--
-<a class="btn btn-default animated fadeInUp" href="#" role="button">
+<a class="btn btn-default wow fadeInUp" href="#" role="button">
     <span class="btnicon icon-social-dribbble"></span>
     <span class="button_text">View all items</span>
 </a>
@@ -267,7 +267,7 @@ FOOTER START
             <p>Copyrightⓒ. 2016 oskmkr All Rights Reserved.</p>
         </div><#-- FOOTER COPYRIGHT END -->
     <#--
-    <div class="footersocial animated fadeInUp" style="-webkit-animation-duration:3s"><#-- FOOTER SOCIAL ICONS START --#>
+    <div class="footersocial wow fadeInUp" data-wow-duration="3s"><#-- FOOTER SOCIAL ICONS START --#>
         <ul>
             <li><a href="http://facebook.com/MamunSrizon"><span class="icon-social-facebook"></span></a></li>
             <li><a href="http://twitter.com/MamunSrizon"><span class="icon-social-twitter"></span></a></li>
@@ -291,5 +291,7 @@ FOOTER START
 <script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/jquery.jribbble-1.0.1.ugly.js"></script>
 <script src="js/eventList.js"></script>
+<script src="js/wow.min.js"></script>
+<script>new WOW().init();</script>
 </body>
 </html>

@@ -82,7 +82,7 @@ TESTIMONIAL SECTION START
 =========================== -->
 
 <div id="clien" class="container">
-    <div class="sectionhead animated bounceInUp" style="-webkit-animation-duration:2s">
+    <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
         <span class="bigicon icon-bubbles"></span>
         <h3>Clien 알뜰 게시판</h3>
         <h5>최신 클리앙 알뜰 게시판</h5>
@@ -93,7 +93,7 @@ TESTIMONIAL SECTION START
 
     <#list clienEventList as clienEvent>
 
-        <div class="panel panel-default animated zoomIn" style="-webkit-animation-duration:1s">
+        <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
             <a class="black-link" href="${clienEvent.link}">
                 <div class="panel-body latest-item">
                     <div class="clientsphoto">
@@ -140,5 +140,7 @@ FOOTER START
 <script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/jquery.jribbble-1.0.1.ugly.js"></script>
 <script src="js/eventList.js"></script>
+<script src="js/wow.min.js"></script>
+<script>new WOW().init();</script>
 </body>
 </html>
