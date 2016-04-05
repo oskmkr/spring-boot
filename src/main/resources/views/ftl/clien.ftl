@@ -93,7 +93,7 @@ TESTIMONIAL SECTION START
 
     <#list clienEventList as clienEvent>
 
-        <div class="panel panel-default animated zoomIn" style="-webkit-animation-duration:1s">
+        <div class="panel panel-default animated " style="-webkit-animation-duration:1s">
             <a class="black-link" href="${clienEvent.link}">
                 <div class="panel-body latest-item">
                     <div class="clientsphoto">
