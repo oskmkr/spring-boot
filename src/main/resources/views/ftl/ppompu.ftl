@@ -76,8 +76,9 @@ GOOGLE FONTS
 </head>
 <body data-spy="scroll">
 <div id="ppompu" class="container">
-    <div class="sectionhead wow bounceInUp" data-wow-duration="2s">
+    <div class="sectionhead animated bounceInUp" style="-webkit-animation-duration:2s">
         <span class="bigicon icon-bubbles"></span>
+
         <h3>뽐뿌 게시판</h3>
         <h4>최신 뽐뿌 게시판</h4>
         <hr class="separetor">
@@ -85,7 +86,7 @@ GOOGLE FONTS
 
     <div class="row col-md-4">
     <#list ppompuEventList as ppompuEvent>
-        <div class="panel panel-default wow zoomIn" data-wow-duration="1s">
+        <div class="panel panel-default animated zoomIn" style="-webkit-animation-duration:1s">
             <a class="black-link" href="${ppompuEvent.link}">
                 <div class="panel-body">
                     <div class="clientsphoto">
@@ -109,6 +110,7 @@ FOOTER START
 <footer>
     <div class="container">
         <span class="bigicon icon-like"></span>
+
         <div class="footerlinks"></div>
     <#--
     <div class="footerlinks">
@@ -125,7 +127,7 @@ FOOTER START
             <p>Copyrightⓒ. 2016 oskmkr All Rights Reserved.</p>
         </div><#-- FOOTER COPYRIGHT END -->
     <#--
-    <div class="footersocial wow fadeInUp" data-wow-duration="3s"><#-- FOOTER SOCIAL ICONS START --#>
+    <div class="footersocial animated fadeInUp" style="-webkit-animation-duration:3s"><#-- FOOTER SOCIAL ICONS START --#>
         <ul>
             <li><a href="http://facebook.com/MamunSrizon"><span class="icon-social-facebook"></span></a></li>
             <li><a href="http://twitter.com/MamunSrizon"><span class="icon-social-twitter"></span></a></li>
@@ -150,7 +152,5 @@ FOOTER START
 <script src="js/jquery.nicescroll.min.js"></script>
 <script src="js/jquery.jribbble-1.0.1.ugly.js"></script>
 <script src="js/eventList.js"></script>
-<script src="js/wow.min.js"></script>
-<script>new WOW().init();</script>
 </body>
 </html>
