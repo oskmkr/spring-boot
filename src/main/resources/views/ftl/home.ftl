@@ -155,7 +155,7 @@ TESTIMONIAL SECTION START
                             <div class="sectionhead animated bounceInUp" style="-webkit-animation-duration:2s">
                                 <span class="bigicon icon-bubbles"></span>
                                 <h3>클리앙 최신 이벤트</h3>
-                                <h4>가장 조회가 많이 된 이벤트 소식</h4>
+                                <h4>최근 등록 된 이벤트 소식</h4>
                                 <hr class="separetor">
                             </div><#-- TESTIMONIAL SECTIONHEAD END -->
 
@@ -185,7 +185,7 @@ TESTIMONIAL SECTION START
                             <div class="sectionhead animated bounceInUp" style="-webkit-animation-duration:2s">
                                 <span class="bigicon icon-bubbles"></span>
                                 <h3>뽐뿌 최신 이벤트</h3>
-                                <h4>가장 조회가 많이 된 이벤트 소식</h4>
+                                <h4>최근 등록 된 이벤트 소식</h4>
                                 <hr class="separetor">
                             </div><#-- TESTIMONIAL SECTIONHEAD END -->
 
