@@ -1,6 +1,9 @@
 package com.oskm.parser;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by oskm on 2016-03-08.
@@ -17,7 +20,7 @@ public class PpompuEvent implements Serializable, ReadCountFindable, WriteDateFi
     private Integer readCount;
 
     public String getCategory() {
-        return category;
+        return "[" + category + "]";
     }
 
     public void setCategory(String category) {
@@ -49,6 +52,20 @@ public class PpompuEvent implements Serializable, ReadCountFindable, WriteDateFi
     }
 
     public String getWriteDate() {
+        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return sf.format(this.getWriteDateTime());
+    }
+
+    public Date getWriteDateTime() {
+        SimpleDateFormat sf = new SimpleDateFormat("yy.MM.dd HH:mm:ss");
+
+        Date writeDate = null;
+        try {
+            writeDate = sf.parse(this.writeDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
         return writeDate;
     }
 
