@@ -1,6 +1,9 @@
 package com.oskm.parser;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by oskm on 2016-03-03.
@@ -46,6 +49,19 @@ public class ClienEvent implements Serializable, ReadCountFindable, WriteDateFin
 
     public void setWriteDate(String writeDate) {
         this.writeDate = writeDate;
+    }
+
+    public Date getWriteDateTime() {
+        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        Date writeDate = null;
+        try {
+            writeDate = sf.parse(this.writeDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return writeDate;
     }
 
     public Integer getReadCount() {

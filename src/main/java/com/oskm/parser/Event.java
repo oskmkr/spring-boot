@@ -1,5 +1,7 @@
 package com.oskm.parser;
 
+import java.util.Date;
+
 /**
  * Created by oskm on 2016-03-23.
  */

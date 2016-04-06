@@ -1,9 +1,6 @@
 package com.oskm.home;
 
-import com.oskm.parser.ClienEvent;
-import com.oskm.parser.DoctcEvent;
-import com.oskm.parser.Event;
-import com.oskm.parser.PpompuEvent;
+import com.oskm.parser.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +28,18 @@ public class HomeController {
         List<ClienEvent> clienEventList = clienEventCrawler.findEvent();
         List<PpompuEvent> ppompuEventList = ppompuEventCrawler.findEvent();
 
+
+        List<WriteDateFindable> eventList = new ArrayList<>();
+        eventList.addAll(clienEventList);
+        eventList.addAll(ppompuEventList);
+
+        eventList.sort(new Comparator<WriteDateFindable>() {
+            @Override
+            public int compare(WriteDateFindable o1, WriteDateFindable o2) {
+                return (o2.getWriteDateTime()).compareTo(o1.getWriteDateTime());
+            }
+        });
+
         List<ClienEvent> top3ClienEventList = new TopReadEventFinder<ClienEvent>().find(clienEventList);
         List<PpompuEvent> top3PpompuEventList = new TopReadEventFinder<PpompuEvent>().find(ppompuEventList);
 
@@ -57,6 +66,7 @@ public class HomeController {
         List<ClienEvent> latestClienEventList = latestClienEventFinder.find(clienEventList);
         List<PpompuEvent> latestPpompuEventList = latestPpompuEventFinder.find(ppompuEventList);
 
+        model.addAttribute("eventList", eventList);
         model.addAttribute("top3EventList", top3EventList);
         model.addAttribute("latestClienEventList", latestClienEventList);
         model.addAttribute("latestPpompuEventList", latestPpompuEventList);

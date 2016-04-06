@@ -89,6 +89,9 @@ TESTIMONIAL SECTION START
             <li class="active"><a href="#home" data-toggle="tab" aria-expanded="false">홈
                 <div class="ripple-container"></div>
             </a></li>
+            <li class=""><a href="#focus" data-toggle="tab" aria-expanded="false">주목 아벤트
+                <div class="ripple-container"></div>
+            </a></li>
             <li class=""><a href="#latestClien" data-toggle="tab" aria-expanded="false">hot 클리앙
                 <div class="ripple-container"></div>
             </a></li>
@@ -122,6 +125,35 @@ TESTIMONIAL SECTION START
 
                 <div id="myTabContent" class="tab-content">
                     <div class="tab-pane fade active in" id="home">
+                        <div id="topReadEvent" class="container">
+                            <div class="sectionhead animated bounceInUp" style="-webkit-animation-duration:2s">
+                                <span class="bigicon icon-bubbles"></span>
+                                <h3>이벤트 타임라인</h3>
+                                <h5>최신순 핫딜 이벤트</h5>
+                                <hr class="separetor">
+                            </div><#-- TESTIMONIAL SECTIONHEAD END -->
+
+                            <div class="row">
+                            <#list eventList as event>
+                                <div class="panel panel-default animated zoomIn" style="-webkit-animation-duration:1s">
+                                    <a class="black-link" href="${event.link}">
+                                        <div class="panel-body latest-item">
+                                            <div class="clientsphoto">
+                                                <img src="img/honey_128.png" alt="">
+                                            </div>
+                                            <div class="quote">
+                                                <div>${event.category} ${event.title}</div>
+                                                <h5>${event.writeDate}</h5>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </#list>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade in" id="focus">
                         <div id="topReadEvent" class="container">
                             <div class="sectionhead animated bounceInUp" style="-webkit-animation-duration:2s">
                                 <span class="bigicon icon-bubbles"></span>
