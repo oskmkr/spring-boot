@@ -89,7 +89,7 @@ TESTIMONIAL SECTION START
             <li class="active"><a href="#home" data-toggle="tab" aria-expanded="false">홈
                 <div class="ripple-container"></div>
             </a></li>
-            <li class=""><a href="#focus" data-toggle="tab" aria-expanded="false">주목 아벤트
+            <li class=""><a href="#focus" data-toggle="tab" aria-expanded="false">주목 핫딜
                 <div class="ripple-container"></div>
             </a></li>
             <li class=""><a href="#latestClien" data-toggle="tab" aria-expanded="false">hot 클리앙
@@ -128,7 +128,7 @@ TESTIMONIAL SECTION START
                         <div id="topReadEvent" class="container">
                             <div class="sectionhead animated bounceInUp" style="-webkit-animation-duration:2s">
                                 <span class="bigicon icon-bubbles"></span>
-                                <h3>이벤트 타임라인</h3>
+                                <h3>핫딜 타임라인</h3>
                                 <h5>최신순 핫딜 이벤트</h5>
                                 <hr class="separetor">
                             </div><#-- TESTIMONIAL SECTIONHEAD END -->
