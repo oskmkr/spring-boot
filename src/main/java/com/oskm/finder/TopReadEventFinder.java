@@ -1,4 +1,4 @@
-package com.oskm.home;
+package com.oskm.finder;
 
 import com.oskm.parser.ReadCountFindable;
 import org.springframework.util.CollectionUtils;

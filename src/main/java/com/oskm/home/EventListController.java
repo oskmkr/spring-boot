@@ -1,10 +1,8 @@
 package com.oskm.home;
 
+import com.oskm.crawler.EventCrawler;
 import com.oskm.parser.ClienEvent;
-import com.oskm.parser.DoctcEvent;
-import com.oskm.parser.Event;
 import com.oskm.parser.PpompuEvent;
-import com.oskm.parser.html.PpompuEventParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

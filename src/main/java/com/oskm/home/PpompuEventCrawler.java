@@ -1,5 +1,6 @@
 package com.oskm.home;
 
+import com.oskm.crawler.EventCrawler;
 import com.oskm.db.file.FileStoreTemplate;
 import com.oskm.parser.PpompuEvent;
 import com.oskm.parser.Parser;

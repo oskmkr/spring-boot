@@ -1,4 +1,4 @@
-package com.oskm.home;
+package com.oskm.finder;
 
 import com.oskm.parser.Event;
 import org.springframework.stereotype.Component;

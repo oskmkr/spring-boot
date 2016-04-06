@@ -1,4 +1,4 @@
-package com.oskm.home;
+package com.oskm.crawler;
 
 import com.oskm.db.file.FileStoreTemplate;
 import com.oskm.parser.ClienEvent;

@@ -1,12 +1,11 @@
 package com.oskm.home;
 
+import com.oskm.finder.TopReadEventFinder;
 import com.oskm.parser.ClienEvent;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by oskm on 2016-03-22.

@@ -1,8 +1,7 @@
 package com.oskm;
 
-import com.oskm.home.LatestEventFinder;
+import com.oskm.finder.LatestEventFinder;
 import com.oskm.parser.ClienEvent;
-import com.oskm.parser.Event;
 import com.oskm.parser.PpompuEvent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

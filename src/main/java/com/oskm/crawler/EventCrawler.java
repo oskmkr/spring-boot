@@ -1,4 +1,4 @@
-package com.oskm.home;
+package com.oskm.crawler;
 
 import java.util.List;
 

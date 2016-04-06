@@ -1,6 +1,7 @@
 package com.oskm.home;
 
 import com.oskm.Application;
+import com.oskm.crawler.ClienEventCrawler;
 import com.oskm.db.file.FileStoreTemplate;
 import com.oskm.parser.ClienEvent;
 import com.oskm.parser.Parser;

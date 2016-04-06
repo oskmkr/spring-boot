@@ -1,6 +1,6 @@
 package com.oskm.schedule;
 
-import com.oskm.home.EventCrawler;
+import com.oskm.crawler.EventCrawler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
