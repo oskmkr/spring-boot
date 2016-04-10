@@ -1,16 +1,51 @@
 package com.oskm.push;
 
+import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.*;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestTemplate;
+
+import java.io.BufferedInputStream;
+import java.io.IOException;
+
 /**
- * senderId : 918868963632
- * api key : AIzaSyAFwZI90dNfb4wB7qJ2SM9Z3lLnPIGc5e8
- * registed id : APA91bEEadFZHO3W7s4jGbQvxjAswy0gSDO_0s3c1b6L3fPdDZl2u8cugf5qFi0rNTREJ7k_t-zxz1Cs35Uz5notfqFKkplXucsXR5t1tTYZ0r7ZA5G0STLSZnkVhy3p9za0tB3kt-4p
+ * <p>
+ * <p>
  * Created by oskm on 2016-03-14.
  */
 public class GCMMessageSender {
-    /*$ curl -H "Authorization: key=AIzaSyAFwZI90dNfb4wB7qJ2SM9Z3lLnPIGc5e8" -H "Cont
-    ent-Type:application/json" https://android.googleapis.com/gcm/send -d "{\"regis
-        tration_ids\":[\"APA91bEEadFZHO3W7s4jGbQvxjAswy0gSDO_0s3c1b6L3fPdDZl2u8cugf5qFi
-        0rNTREJ7k_t-zxz1Cs35Uz5notfqFKkplXucsXR5t1tTYZ0r7ZA5G0STLSZnkVhy3p9za0tB3kt-4p\
-        "]}"
-*/
+    private static final Logger LOG = LoggerFactory.getLogger(GCMMessageSender.class);
+
+    public void send() {
+
+        RestTemplate restTemplate = new RestTemplate();
+
+        MultiValueMap<String, String> parameters = new LinkedMultiValueMap<>();
+
+        String payload = null;
+        try {
+            payload = IOUtils.toString(new BufferedInputStream(ClassLoader.getSystemResourceAsStream("templates/data.json")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        HttpHeaders headers = new HttpHeaders();
+        //headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
+        headers.set("Authorization", "key=");
+
+        HttpEntity<String> entity = new HttpEntity<>(payload, headers);
+
+        ResponseEntity<String> result = restTemplate.exchange("https://gcm-http.googleapis.com/gcm/send", HttpMethod.POST, entity, String.class);
+
+        String body = result.getBody();
+
+        LOG.debug("response body " + body);
+
+
+    }
+
 }
